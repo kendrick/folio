@@ -24,8 +24,11 @@
   }
 
   gulp.task('default', getTask('default'));
+
+  gulp.task('build', getTask('build'));
   gulp.task('copy-js', getTask('copy-js'));
   gulp.task('copy-resources', getTask('copy-resources'));
+  gulp.task('server', getTask('server'));
   gulp.task('styles', getTask('styles'));
   gulp.task('views', ['copy-js', 'copy-resources'], getTask('views'));
   gulp.task('watch', getTask('watch'));
