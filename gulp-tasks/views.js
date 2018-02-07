@@ -5,26 +5,44 @@
       var fs = require('fs');
       // var icons = fs.readdirSync(config.patternsPath + '/components/icons/svg');
 
-      const projects = {
-        checkout: {
-          uri: 'projects/checkout.html'
+      const projects = [
+        {
+          title: 'Checkout Redesign',
+          lede: 'Our e-commerce site had a checkout experience that was inconsistent &amp; inaccessible.',
+          uri: 'checkout.html',
+          order: 1
         },
-        ratingsAndReviews: {
-          uri: 'projects/ratings-and-reviews.html'
+        {
+          title: 'Rocketbelt Pattern Library',
+          lede: 'Governance &amp; collaboration with developers led us to better consistency &amp; massive acceleration.',
+          uri: 'rocketbelt.html',
+          order: 2
         },
-        a11y: {
-          uri: 'projects/accessibility.html'
+        {
+          title: 'Site Navigation Taxonomy',
+          lede: '',
+          uri: 'taxonomy.html',
+          order: 3
         },
-        rocketbelt: {
-          uri: 'projects/rocketbelt.html'
+        {
+          title: 'Ratings &amp; Reviews',
+          lede: 'An exercise in silver linings &amp; stakeholder buy-in.',
+          uri: 'ratings-and-reviews.html',
+          order: 4
         },
-        taxonomy: {
-          uri: 'projects/taxonomy.html'
+        {
+          title: 'Accessibility Rehabilitation',
+          lede: 'Identifying empathy gaps &amp; understanding that accessibility is usability.',
+          uri: 'accessibility.html',
+          order: 5
         },
-        wishlistAndRegistry: {
-          uri: 'projects/wishlist-and-registry.html'
+        {
+          title: 'Wishlist &amp Registry',
+          lede: 'Turning a neglected area of the site into something inspirational.',
+          uri: 'wishlist-and-registry.html',
+          order: 6
         }
-      };
+      ];
 
       return gulp.src([config.srcPath + '/**/*.pug', '!' + config.srcPath + '/**/_*.pug'])
         .pipe(plugins.plumber({ errorHandler: plugins.notify.onError('Error: <%= error.message %>') }))
