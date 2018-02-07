@@ -1,16 +1,61 @@
-- var prepend = buildPath ? buildPath : '../..';
+extends ./_layout.pug
 
-doctype html
-html(lang='en')
-  head
-    meta(charset='UTF-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
+block vars
+  - const needsIntro = true;
 
-    block vars
-    block title
-      title Kendrick Arnett | UX Architect
-    block styles
-      link(rel="stylesheet", href="/vendor/rocketbelt.min.css")
+block content
+  article.grid-fluid.main-content
+    section.row.xs-center.xs-middle
+      .col.xs
+        h2 Process
+        ol
+          li User Research &amp; Ideation
+          li Sketches &amp; Visual Design
+          li Prototyping
+          li Development
+          li Iterative A/B Testing
 
-  body.grid-fluid
-    h1 Hello World
+    h2 Selected Projects
+    section
+      .row.xs-center.xs-middle
+        .col.xs-12.sm-6
+          h3 Checkout
+          p Our e-commerce site had a checkout experience that was inconsistent &amp; inaccessible.
+          a(href=`${projects.checkout.uri}`, role='button') Read More #[span.cta_arrow &nbsp;&rsaquo;]
+        figure.col.xs-12.sm-6
+          img(src='http://via.placeholder.com/300x300')
+    section.row.xs-center.xs-middle
+      .col.xs-12.sm-6
+        h3 Product Reviews
+        p An exercise in silver linings &amp; stakeholder buy-in.
+        a(href=`${projects.ratingsAndReviews.uri}`, role='button') Read More #[span.cta_arrow &nbsp;&rsaquo;]
+      figure.col.xs-12.sm-6
+        img(src='http://via.placeholder.com/300x300')
+    section.row.xs-center.xs-middle
+      .col.xs-12.sm-6
+        h3 Wishlist &amp; Registry
+        p Building a neglected area of the site into something inspirational.
+        a(href=`${projects.wishlistAndRegistry.uri}`, role='button') Read More #[span.cta_arrow &nbsp;&rsaquo;]
+      figure.col.xs-12.sm-6
+        img(src='http://via.placeholder.com/300x300')
+    section.row.xs-center.xs-middle
+      .col.xs-12.sm-6
+        h3 Rocketbelt Pattern Library
+        p Governance &amp; collaboration with developers led us to better consistency &amp; massive acceleration.
+        a(href=`${projects.rocketbelt.uri}`, role='button') Read More #[span.cta_arrow &nbsp;&rsaquo;]
+      figure.col.xs-12.sm-6
+        img(src='http://via.placeholder.com/300x300')
+    section.row.xs-center.xs-middle
+      .col.xs-12.sm-6
+        h3 Site Navigation Taxonomy
+        p
+        a(href=`${projects.taxonomy.uri}`, role='button') Read More #[span.cta_arrow &nbsp;&rsaquo;]
+      figure.col.xs-12.sm-6
+        img(src='http://via.placeholder.com/300x300')
+    section.row.xs-center.xs-middle
+      .col.xs-12.sm-6
+        h3 Accessibility Rehabilitation
+        p Identifying empathy gaps &amp; understanding that accessibility is usability.
+        a(href=`${projects.a11y.uri}`, role='button') Read More #[span.cta_arrow &nbsp;&rsaquo;]
+      figure.col.xs-12.sm-6
+        img(src='http://via.placeholder.com/300x300')
