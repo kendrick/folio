@@ -95,8 +95,25 @@ h2 {
 .project_case-study {
   margin: 2rem 1rem; }
 
+.project_role {
+  margin-bottom: 1rem;
+  color: #635e5e;
+  font-size: 1rem; }
+  .project_role_title {
+    text-transform: uppercase; }
+
 figure {
   margin: 0; }
+  figure img {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    max-width: 100%;
+    transition: box-shadow 200ms ease; }
+    figure img:hover {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.23); }
+  figure figcaption {
+    font-style: italic;
+    font-size: 0.79012rem;
+    color: #7c7576; }
 
 a[role='button'] {
   display: inline-flex;
