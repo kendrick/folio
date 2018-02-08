@@ -3,9 +3,97 @@ extends ../_layout.pug
 block content
   article.project_case-study
     h1 Checkout
-    h2.project_role #[span.project_role_title Role:] #[span.project_roles Contextual Inquiry, Use Cases, Sketching, Visual Design, Dev Guidance, A/B Testing]
+    h2.project_role #[span.project_role_title Role:] #[span.project_roles Contextual Inquiry, Use Cases, Sketching, Visual Design, Front-End Guidance, #[code a11y] SME, A/B Testing]
     p.situation Our checkout experience represented the company poorly at a critical point in the shopping process: converting a browser to a buyer. In addition to overall inconsistency within the interface, necessary actions were unclear, superfluous UI & copy increased distraction, and the experience wasn't accessible to customers using assistive technology. We knew we could do better, and that improving the customer's experience in checkout would make a positive impact to the bottom line.
-
+    aside.grid-fluid
+      .row.xs-center.xs-middle
+        .col.xs-12.sm-6
+          figure
+            a(href='../img/projects/checkout/inconsistency/inconsistency-errors.min.jpg')
+              img(
+                src='../img/projects/checkout/inconsistency/inconsistency-errors.min.jpg',
+                alt='A form full of errors.'
+              )
+            figcaption Error styles impart a high cognitive load.
+        .col.xs-12.sm-6
+          figure
+            a(href='../img/projects/checkout/inconsistency/inconsistency-remove-item.min.jpg')
+              img(
+                src='../img/projects/checkout/inconsistency/inconsistency-remove-item.min.jpg',
+                alt='Inconsistent button styles in a modal dialog.'
+              )
+            figcaption Counterintuitive button styles—they look disabled! Preferred action is in the middle.
     p.tasks With the goal of making checkout easier for a customer to complete, I made a plan to improve the information architecture of the experience. Additionally, I needed to increase its consistency with the rest of the site, as well as with other familiar ecommerce sites.
+    aside.grid-fluid
+      .row.xs-center.xs-middle
+        .col.xs-12.sm-3
+          figure
+            a(href='../img/projects/checkout/sketches/01.01-Basket.min.jpg')
+              img(
+                src='../img/projects/checkout/sketches/01.01-Basket.min.jpg',
+                alt='Pencil sketch of an e-commerce shopping basket.'
+              )
+        .col.xs-12.sm-3
+          figure
+            a(href='../img/projects/checkout/sketches/02.01-Shipping Simple.min.jpg')
+              img(
+                src='../img/projects/checkout/sketches/02.01-Shipping Simple.min.jpg',
+                alt='Pencil sketch of an e-commerce shipping screen.'
+              )
+        .col.xs-12.sm-3
+          figure
+            a(href='../img/projects/checkout/sketches/04.02-Billing Guest.min.jpg')
+              img(
+                src='../img/projects/checkout/sketches/04.02-Billing Guest.min.jpg',
+                alt='Pencil sketch of an e-commerce billing screen.'
+              )
+        .col.xs-12.sm-3
+          figure
+            a(href='../img/projects/checkout/sketches/05-Review.min.jpg')
+              img(
+                src='../img/projects/checkout/sketches/05-Review.min.jpg',
+                alt='Pencil sketch of an e-commerce order review.'
+              )
     p.actions I sketched & explored options for simplifying the presentation of shipping methods. I made high fidelity comps of this alternate design, but ultimately didn't receive the necessary development resources to implement that approach. Instead, I simplified repetitive interactions such as adding personal information, or selecting a billing address for a credit card. This effort was greatly reduced by leveraging the company's pattern library and by mentoring a young development team in some advanced front-end techniques.
+    aside.grid-fluid
+      .row.xs-center.xs-middle
+        .col.xs-12.sm-4
+          figure
+            a(href='../img/projects/checkout/mobile/01.01-Basket@2x.min.jpg')
+              img(
+                src='../img/projects/checkout/mobile/01.01-Basket@2x.min.jpg',
+                alt='An e-commerce shopping basket.'
+              )
+        .col.xs-12.sm-4
+          figure
+            a(href='../img/projects/checkout/mobile/05.01.01-Billing CVV@2x.min.jpg')
+              img(
+                src='../img/projects/checkout/mobile/05.01.01-Billing CVV@2x.min.jpg',
+                alt='An e-commerce billing screen.'
+              )
+        .col.xs-12.sm-4
+          figure
+            a(href='../img/projects/checkout/mobile/01.04.02-Quantity Not Available@2x.min.jpg')
+              img(
+                src='../img/projects/checkout/mobile/01.04.02-Quantity Not Available@2x.min.jpg',
+                alt='"Quantity not available" dialog.'
+              )
     p.results The result is a consistent experience that focuses on ease &amp; speed of task completion. The redesign will launch before mid-February. I'll a/b test as many aspects of the new design as possible, and expect to see faster cart completion with an accompanying lift in conversion rate.
+    aside.grid-fluid
+      .row.xs-center.xs-middle
+        .col.xs-12.sm-4
+          figure
+            a(href='../img/projects/checkout/desktop/06.00-Review Before@2x.min.jpg')
+              img(
+                src='../img/projects/checkout/desktop/06.00-Review Before@2x.min.jpg',
+                alt='An e-commerce order review (before).'
+              )
+            figcaption Before: Emphasis on unnecessary elements; poor visual hierarchy; high cognitive load.
+        .col.xs-12.sm-4
+          figure
+            a(href='../img/projects/checkout/desktop/06.01-Review@2x.min.jpg')
+              img(
+                src='../img/projects/checkout/desktop/06.01-Review@2x.min.jpg',
+                alt='An e-commerce order review (after).'
+              )
+            figcaption After: Better information architecture; emphasis on what matters most to the customer.
