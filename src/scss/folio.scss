@@ -11,6 +11,31 @@ h1, h2, h3, h4 {
   font-family: 'Work Sans';
 }
 
+h2 {
+  font-weight: font-weight(normal);
+  font-size: font-size(7);
+}
+
+.link-social {
+  fill: color(white);
+}
+
+.link-email,
+.link-email:hover,
+.link-email:visited,
+.link-email:active {
+  color: color(white);
+  text-decoration: none;
+}
+
+.link-home,
+.link-home:visited,
+.link-home:active {
+  color: color(white);
+  text-decoration: none;
+  font-weight: font-weight(semibold);
+}
+
 .header-without-intro {
   background: color(accent);
   color: color(white);
@@ -31,11 +56,6 @@ h1, h2, h3, h4 {
   padding: 1rem;
   min-height: 44px;
   align-items: center;
-  justify-content: center;
-
-  @include media('>=sm') {
-    justify-content: flex-end;
-  }
 
   .nav_items {
     margin: 0;
@@ -65,13 +85,51 @@ h1, h2, h3, h4 {
   .subtitle {
     font-weight: font-weight(normal);
     font-size: font-size(0);
-    line-height: 1.5;
     font-family: $system-font-stack;
+    line-height: 1.5;
   }
 }
 
 .main-content {
   margin: 5rem auto;
+}
+
+.process {
+  padding: 0;
+  list-style-type: none;
+
+  &_step_title {
+    display: inline;
+    text-transform: uppercase;
+    font-weight: font-weight(normal);
+    font-size: font-size(1);
+  }
+
+  &_step {
+    margin: 0 0 1rem 0;
+
+    p {
+      &:nth-of-type(1) {
+        display: inline;
+      }
+
+      &:nth-of-type(2) {
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  &_step_methods {
+    list-style-type: disc;
+  }
+
+  &_step_method-name {
+    font-weight: font-weight(semibold);
+  }
+}
+
+.project {
+  margin: 3rem 0;
 }
 
 figure {
@@ -114,6 +172,11 @@ footer {
   min-height: 20vh;
   justify-content: center;
   align-items: center;
+
+  .link-email,
+  .link-social {
+    padding: 0.5rem;
+  }
 }
 
 @include media('>=sm') {

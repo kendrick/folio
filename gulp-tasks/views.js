@@ -8,13 +8,13 @@
       const projects = [
         {
           title: 'Checkout Redesign',
-          lede: 'Our e-commerce site had a checkout experience that was inconsistent &amp; inaccessible.',
+          lede: 'Our e-commerce site had a checkout experience that was inconsistent & inaccessible.',
           uri: 'checkout.html',
           order: 1
         },
         {
           title: 'Rocketbelt Pattern Library',
-          lede: 'Governance &amp; collaboration with developers led us to better consistency &amp; massive acceleration.',
+          lede: 'Governance & collaboration with developers led us to better consistency & massive acceleration.',
           uri: 'rocketbelt.html',
           order: 2
         },
@@ -25,19 +25,19 @@
           order: 3
         },
         {
-          title: 'Ratings &amp; Reviews',
-          lede: 'An exercise in silver linings &amp; stakeholder buy-in.',
+          title: 'Ratings & Reviews',
+          lede: 'An exercise in silver linings & stakeholder buy-in.',
           uri: 'ratings-and-reviews.html',
           order: 4
         },
         {
           title: 'Accessibility Rehabilitation',
-          lede: 'Identifying empathy gaps &amp; understanding that accessibility is usability.',
+          lede: 'Identifying empathy gaps & understanding that accessibility is usability.',
           uri: 'accessibility.html',
           order: 5
         },
         {
-          title: 'Wishlist &amp Registry',
+          title: 'Wishlist & Registry',
           lede: 'Turning a neglected area of the site into something inspirational.',
           uri: 'wishlist-and-registry.html',
           order: 6
