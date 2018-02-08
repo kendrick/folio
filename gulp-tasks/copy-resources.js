@@ -10,7 +10,7 @@
         .pipe(plugins.vinylFs.dest(config.buildPath + '/vendor/'));
 
       return plugins.vinylFs.src([
-        config.srcPath + '/**/img/*.*',
+        config.srcPath + '/**/img/**/*',
         config.srcPath + '/**/*.svg',
         config.srcPath + '/**/*.zip'
       ])

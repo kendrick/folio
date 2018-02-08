@@ -136,8 +136,29 @@ h2 {
   margin: 2rem 1rem;
 }
 
+.project_role {
+  margin-bottom: 1rem;
+  color: color(gray, minus1);
+  font-size: font-size(0);
+
+  &_title {
+    text-transform: uppercase;
+  }
+}
+
 figure {
   margin: 0;
+
+  img {
+    @include z-depth(1);
+
+    max-width: 100%;
+    transition: box-shadow 200ms ease;
+
+    &:hover {
+      @include z-depth(2);
+    }
+  }
 }
 
 a[role='button'] {
