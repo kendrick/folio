@@ -19,15 +19,15 @@
           order: 2
         },
         {
-          title: 'Site Navigation Taxonomy',
-          lede: '',
-          uri: 'taxonomy.html',
-          order: 3
-        },
-        {
           title: 'Ratings & Reviews',
           lede: 'An exercise in silver linings & stakeholder buy-in.',
           uri: 'ratings-and-reviews.html',
+          order: 3
+        },
+        {
+          title: 'Site Navigation Taxonomy',
+          lede: '',
+          uri: 'taxonomy.html',
           order: 4
         },
         {
