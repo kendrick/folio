@@ -4,7 +4,7 @@
 
   const plugins = require('gulp-load-plugins')({ DEBUG: false, pattern: '*' });
 
-  const buildPath = './dist';
+  const buildPath = './docs';
   const buildCssPath = `${buildPath}/css`;
   const srcPath = './src';
   const tasksPath = './gulp-tasks';
