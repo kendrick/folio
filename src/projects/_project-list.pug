@@ -1,8 +1,0 @@
-block content
-  each project in projects.sort((a, b) => { return a.order < b.order ? -1 : 1 })
-    section
-      .row.xs-center.xs-middle
-        .col.xs-12.sm-6.project
-          h3 #{project.title}
-          p #{project.lede}
-          a(href=`${projectsPath}${project.uri}`, role='button') Read More #[span.cta_arrow &nbsp;&rsaquo;]
