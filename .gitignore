@@ -1,17 +1,73 @@
+# These directories aren't sources of truth
+# as they're generated via build tasks
+src/rocketbelt/~tmp/**
+
+# ====================================================
+# Ignore component symlinks (but not site-specific JS)
+# ====================================================
+templates/components/**/_*.pug
+templates/components/**/*.js
+templates/components/**/*.svg
+templates/base/**/_*.pug
+templates/base/**/*.js
+templates/base/**/*.json
+templates/creative/**/_*.pug
+templates/creative/**/*.js
+templates/creative/**/*.json
+
+# =========================
+docs/
 dist/
 node_modules/
 *.bak
 logs/*
+logs
 *.log
-npm-debug.log
+npm-debug.log*
+
 !.gitkeep
 tmp
 .sass-cache/
 .npm
-Gemfile.lock
+.grunt
 
-.vscode
+# Yarn
+yarn-debug.log*
+yarn-error.log*
+.pnp/
+.pnp.js
+.yarn-integrity
+
+# Code coverage output
+.nyc_output
+coverage
+lib-cov
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# dotenv environment variables file
+.env
+
+# gatsby files
+.cache/
+public
+
+# Mac desktop service store files
 .DS_Store
+
+# Jetbrains project files
+**/.idea/workspace.xml
+**/.idea/tasks.xml
 
 # =========================
 # Windows detritus
@@ -26,3 +82,6 @@ Desktop.ini
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
+
+# VSCode workspace settings
+.vscode/
