@@ -2,7 +2,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 0 6rem;
+}
+
+@media screen and (min-width: 800px) {
+  .card-list {
+    padding: 0 6rem;
+  }
 }
 
 li.card {
