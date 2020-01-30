@@ -1,0 +1,14 @@
+.artifacts .images {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.artifacts-competitive-analysis .gatsby-image-wrapper {
+  width: 200px;
+  margin: 0.5rem;
+}
+
+.artifacts-ixd.artifacts-nav .gatsby-image-wrapper {
+  width: 400px;
+  margin: 0.5rem;
+}

@@ -82,8 +82,8 @@ const SearchAutocompletePage = () => {
       <h3>Role</h3>
       <p>
         Lead UX Architect. I worked closely with our product owner and our
-        remote development team. Stakeholders included the VP of E-Commerce &
-        Omnichannel and our Internal Search Specialist.
+        remote development team. Stakeholders included the VP of e-commerce and
+        our internal search specialist.
       </p>
 
       <h2>Research</h2>
