@@ -1,0 +1,26 @@
+.artifacts-rb.artifacts-intro .gatsby-image-wrapper {
+  width: 200px;
+  margin: 0.5rem;
+}
+
+.artifacts-rb.artifacts-sketch .gatsby-image-wrapper {
+  width: 375px;
+  margin: 0.5rem;
+}
+
+@media screen and (min-width: 400px) {
+  .artifacts-rb.artifacts-sketch .gatsby-image-wrapper {
+    width: 35vw;
+  }
+}
+
+.artifacts-rb.artifacts-site .gatsby-image-wrapper {
+  width: 375px;
+  margin: 0.5rem;
+}
+
+@media screen and (min-width: 400px) {
+  .artifacts-rb.artifacts-site .gatsby-image-wrapper {
+    width: 35vw;
+  }
+}
