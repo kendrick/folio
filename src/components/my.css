@@ -3,6 +3,33 @@
   margin: 0;
 }
 
+.link-wrapper {
+  padding: 0.5rem;
+  display: inline-block;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 2px;
+}
+
+.link-wrapper:first-of-type {
+  margin-right: 1rem;
+}
+
+.link-wrapper a {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  color: rgba(0, 0, 0, 0.8);
+  text-decoration: none;
+}
+
+.link-wrapper:hover {
+  cursor: pointer;
+}
+
+.link-wrapper:hover a {
+  text-decoration: underline;
+}
+
 .list-horizontal li {
   display: inline-block;
   padding: 0.5rem;

@@ -6,10 +6,6 @@ header {
   align-items: center;
 }
 
-header ul {
-  align-self: flex-end;
-}
-
 header .site-title a {
   color: inherit;
   font-size: 2rem;

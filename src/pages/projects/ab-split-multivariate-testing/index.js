@@ -15,7 +15,9 @@ const AbSplitMultivariateTesting = () => (
     <h3>Promo Drawer</h3>
     <h3>Order Review</h3>
     <h3>Add-to-Cart Upseller</h3>
-    <Link to="/projects">Back to Projects</Link>
+    <div className="link-wrapper">
+      <Link to="/projects">Back to Projects</Link>
+    </div>
   </Layout>
 );
 

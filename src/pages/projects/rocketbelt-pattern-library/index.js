@@ -185,9 +185,9 @@ const Rocketbelt = () => {
         return <Img fluid={node.childImageSharp.fluid} key={node.id} />;
       })} */}
 
-      <p>
+      <div className="link-wrapper">
         <Link to="/projects">← Back to Projects</Link>
-      </p>
+      </div>
     </Layout>
   );
 };

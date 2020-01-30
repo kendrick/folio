@@ -20,10 +20,10 @@ const Header = ({ siteTitle, headerStyle }) => (
     </span>
 
     <ul className="list-horizontal">
-      <li key="projects">
+      <li className="link-wrapper" key="projects">
         <Link to="/projects">Projects</Link>
       </li>
-      <li key="about">
+      <li className="link-wrapper" key="about">
         <Link to="/about">About</Link>
       </li>
       {/* <li key="contact">
