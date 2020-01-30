@@ -263,7 +263,7 @@ const SearchAutocompletePage = () => {
       })} */}
 
       <p>
-        <Link to="/projects">←Back to Projects</Link>
+        <Link to="/projects">← Back to Projects</Link>
       </p>
     </Layout>
   );

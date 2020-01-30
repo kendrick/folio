@@ -135,9 +135,9 @@ const MobileNavPage = () => {
         visual/tile navigation, header, and footer would all be affected.
       </p>
       <p>
-        I clearly outlined these interaction requirements with our Product Owner
-        to include in user stories. I also built examples on Codepen to
-        demonstrate desired animations & interactions.
+        Working closely with our product owner, I clearly outlined these
+        interaction requirements to be included in user stories. I also built
+        examples on Codepen to demonstrate desired animations & interactions.
       </p>
 
       <aside className="artifacts artifacts-nav artifacts-ixd">
@@ -201,7 +201,7 @@ const MobileNavPage = () => {
         return <Img fluid={node.childImageSharp.fluid} key={node.id} />;
       })} */}
       <p>
-        <Link to="/projects">←Back to Projects</Link>
+        <Link to="/projects">← Back to Projects</Link>
       </p>
     </Layout>
   );
