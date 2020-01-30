@@ -231,11 +231,11 @@ const SearchAutocompletePage = () => {
 
       <h3>Next Steps</h3>
       <p>
-        The product owner, dev team & I collaborated closely while the feature
-        was implemented. The design was successfully built and deployed by the
-        team. We’ve collected analytics that indicate customers who search are
-        finding what they’re looking for in fewer page views and account for a
-        lift in RPV, as outlined above.
+        The product owner, dev team & I worked together closely while the
+        feature was implemented. The design was successfully built and deployed
+        by the team. We’ve collected analytics that indicate customers who
+        search are finding what they’re looking for in fewer page views and
+        account for a lift in RPV, as outlined above.
       </p>
       <p>
         That said, the overall search experience on the site still needs
