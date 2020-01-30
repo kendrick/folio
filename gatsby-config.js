@@ -13,16 +13,6 @@ module.exports = {
         path: `${__dirname}/src/artifacts`,
       },
     },
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `EB Garamond`,
-          },
-        ],
-      },
-    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
