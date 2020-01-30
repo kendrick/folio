@@ -1,0 +1,28 @@
+.list-horizontal {
+  list-style-type: none;
+  margin: 0;
+}
+
+.list-horizontal li {
+  display: inline-block;
+  padding: 0.5rem;
+  margin: 0;
+}
+
+figure {
+  margin: 0;
+}
+
+.caption {
+  font-size: 0.75rem;
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+li {
+  margin-bottom: 0.33rem;
+}
+
+ul {
+  margin: 1rem 2rem;
+}

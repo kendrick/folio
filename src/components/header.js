@@ -1,42 +1,44 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
+import React from 'react';
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
+import './header.css';
+
+const Header = ({ siteTitle, headerStyle }) => (
+  <header>
+    <span className={`site-title`} style={{ margin: 0 }}>
+      <Link
+        to="/"
+        style={{
+          textDecoration: `none`,
+          display: headerStyle === 'no-name' ? 'none' : 'inherit',
+        }}
+      >
+        Kendrick Arnett
+        <small>UX Leader</small>
+      </Link>
+    </span>
+
+    <ul className="list-horizontal">
+      <li key="projects">
+        <Link to="/projects">Projects</Link>
+      </li>
+      <li key="about">
+        <Link to="/about">About</Link>
+      </li>
+      {/* <li key="contact">
+        <Link to="/contact">Contact</Link>
+      </li> */}
+    </ul>
   </header>
-)
+);
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-}
+};
 
 Header.defaultProps = {
-  siteTitle: ``,
-}
+  siteTitle: `Kendrick Arnett`,
+};
 
-export default Header
+export default Header;
