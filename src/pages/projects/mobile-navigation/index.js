@@ -4,10 +4,10 @@ import Img from 'gatsby-image';
 
 import Layout from '../../../components/layout';
 import SEO from '../../../components/seo';
+import Overview from '../../../components/overview';
+import { css } from '@emotion/core';
 
-import './mobile-navigation.css';
-
-const MobileNavPage = () => {
+const MobileNavPage = ({ props }) => {
   const data = useStaticQuery(graphql`
     query {
       allFile(
@@ -49,42 +49,33 @@ const MobileNavPage = () => {
     }),
   };
 
+  console.dir(props);
   return (
     <Layout>
       <SEO title="Kendrick Arnett › Projects › Mobile Navigation Redesign" />
       <h1>Mobile Navigation Redesign</h1>
-      <h2>Overview</h2>
-      <h3>Challenge</h3>
-      <p>
-        Navigation site-wide displayed poor interaction design & feedback, and
-        presented few modes of alternate navigation or product finding for
-        customers who were having trouble finding the right product. We were
-        also presented the business need to make it easier for customers to
-        contact our Customer Relations team via lower-cost channels like chat or
-        text message.
-      </p>
 
-      <h3>Approach</h3>
-      <p>
-        Our analytics team identified the need for alternate navigation paths
-        beyond our primary category navigation. With this knowledge, I performed
-        a thorough competitive analysis and collected secondary research to
-        drive the experience.
-      </p>
-
-      <h3>Outcome</h3>
-      <p>
-        The site has clearer navigation indicators and customers can contact our
-        Customer Relations team instantly from our main navigation, where
-        they’re most likely to look for it. However, much of the design remains
-        in the team’s backlog.
-      </p>
-      <h3>Role</h3>
-      <p>
-        Lead UX Architect. I collaborated with our product owner, web analyst,
-        and our remote development team. The primary stakeholder was the VP of
-        e-commerce.
-      </p>
+      <Overview
+        overview={{
+          challenge: `Navigation site-wide displayed poor interaction design & feedback, and
+          presented few modes of alternate navigation or product finding for
+          customers who were having trouble finding the right product. We were
+          also presented the business need to make it easier for customers to
+          contact our Customer Relations team via lower-cost channels like chat or
+          text message.`,
+          approach: `Our analytics team identified the need for alternate navigation paths
+          beyond our primary category navigation. With this knowledge, I performed
+          a thorough competitive analysis and collected secondary research to
+          drive the experience.`,
+          outcome: `The site has clearer navigation indicators and customers can contact our
+          Customer Relations team instantly from our main navigation, where
+          they’re most likely to look for it. However, much of the design remains
+          in the team’s backlog.`,
+          role: `Lead UX Architect. I collaborated with our product owner, web analyst,
+          and our remote development team. The primary stakeholder was the VP of
+          e-commerce.`,
+        }}
+      ></Overview>
 
       <h2>Research</h2>
       <h3>Primary Research</h3>
@@ -95,11 +86,27 @@ const MobileNavPage = () => {
       </p>
 
       <aside className="artifacts artifacts-competitive-analysis">
-        <div className="images">
+        <div
+          className="images breakout breakout-narrow"
+          css={css`
+            justify-content: center;
+          `}
+        >
           {images.competitiveAnalysis.map(({ node }) => {
             return (
-              <figure key={node.id}>
-                <Img fluid={node.childImageSharp.fluid} />
+              <figure
+                key={node.id}
+                className="breakout_image breakout_image-space-md"
+                css={css`
+                  flex: 0;
+                `}
+              >
+                <Img
+                  fluid={node.childImageSharp.fluid}
+                  css={css`
+                    width: 375px;
+                  `}
+                />
               </figure>
             );
           })}
@@ -141,11 +148,15 @@ const MobileNavPage = () => {
       </p>
 
       <aside className="artifacts artifacts-nav artifacts-ixd">
-        <div className="images">
+        <div className="images breakout breakout-narrow">
           {images.ixd.map(({ node }) => {
             return (
-              <a href={node.childImageSharp.fluid.src}>
-                <figure key={node.id}>
+              <a
+                href={node.childImageSharp.fluid.src}
+                className="breakout_image"
+                key={node.id}
+              >
+                <figure>
                   <Img fluid={node.childImageSharp.fluid} />
                 </figure>
               </a>
@@ -163,11 +174,15 @@ const MobileNavPage = () => {
       </p>
 
       <aside className="artifacts artifacts-nav artifacts-visual-design">
-        <div className="images">
+        <div className="images breakout">
           {images.visualDesign.map(({ node }) => {
             return (
-              <a href={node.childImageSharp.fluid.src}>
-                <figure key={node.id}>
+              <a
+                href={node.childImageSharp.fluid.src}
+                className="breakout_image"
+                key={node.id}
+              >
+                <figure>
                   <Img fluid={node.childImageSharp.fluid} />
                 </figure>
               </a>

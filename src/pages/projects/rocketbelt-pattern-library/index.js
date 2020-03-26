@@ -6,7 +6,7 @@ import Layout from '../../../components/layout';
 import Image from '../../../components/image';
 import SEO from '../../../components/seo';
 
-import './rocketbelt-pattern-library.css';
+import Overview from '../../../components/overview';
 
 const Rocketbelt = () => {
   const data = useStaticQuery(graphql`
@@ -49,33 +49,22 @@ const Rocketbelt = () => {
     <Layout>
       <SEO title="Kendrick Arnett › Projects › Rocketbelt Pattern Library" />
       <h1>Rocketbelt Pattern Library</h1>
-      <h2>Overview</h2>
-      <h3>Challenge</h3>
-      <p>
-        A survey of the site and an audit of our CSS identified a large number
-        of inconsistencies in UI implementation and in brand elements.
-      </p>
 
-      <h3>Approach</h3>
-      <p>
-        We sorted patterns into 3 groups: those that needed to persist, those
-        that needed to be updated, and those that needed to be eliminated.
-      </p>
-
-      <h3>Outcome</h3>
-      <p>
-        The organization has a common visual language between design &
-        development that's used daily; developers were excited to take part in
-        the collaboration; Our CSS payload was greatly reduced.
-      </p>
-
-      <h3>Role</h3>
-      <p>
-        As Lead UX Architect, I performed a technical audit and presented my
-        proposed remedy to executives and other stakeholders. I subsequently
-        built our front-end library and corresponding Sketch library, and led
-        and mentored developers in contributing updates as needed.
-      </p>
+      <Overview
+        overview={{
+          challenge: `A survey of the site and an audit of our CSS identified a large number
+          of inconsistencies in UI implementation and in brand elements.`,
+          approach: `We sorted patterns into 3 groups: those that needed to persist, those
+          that needed to be updated, and those that needed to be eliminated.`,
+          outcome: `The organization has a common visual language between design &
+          development that's used daily; developers were excited to take part in
+          the collaboration; Our CSS payload was greatly reduced.`,
+          role: `As Lead UX Architect, I performed a technical audit and presented my
+          proposed remedy to executives and other stakeholders. I subsequently
+          built our front-end library and corresponding Sketch library, and led
+          and mentored developers in contributing updates as needed.`,
+        }}
+      ></Overview>
 
       <h2>Research</h2>
       <h3>Heuristic Analysis</h3>
@@ -93,11 +82,15 @@ const Rocketbelt = () => {
       </p>
 
       <aside className="artifacts artifacts-rb artifacts-intro">
-        <div className="images">
+        <div className="images breakout">
           {images.intro.map(({ node }) => {
             return (
-              <a href={node.childImageSharp.fluid.src}>
-                <figure key={node.id}>
+              <a
+                href={node.childImageSharp.fluid.src}
+                className="breakout_image"
+                key={node.id}
+              >
+                <figure>
                   <Img fluid={node.childImageSharp.fluid} />
                 </figure>
               </a>
@@ -128,11 +121,15 @@ const Rocketbelt = () => {
       </p>
 
       <aside className="artifacts artifacts-rb artifacts-sketch">
-        <div className="images">
+        <div className="images breakout">
           {images.sketch.map(({ node }) => {
             return (
-              <a href={node.childImageSharp.fluid.src}>
-                <figure key={node.id}>
+              <a
+                href={node.childImageSharp.fluid.src}
+                className="breakout_image"
+                key={node.id}
+              >
+                <figure>
                   <Img fluid={node.childImageSharp.fluid} />
                 </figure>
               </a>
@@ -150,11 +147,15 @@ const Rocketbelt = () => {
       </p>
 
       <aside className="artifacts artifacts-rb artifacts-site">
-        <div className="images">
+        <div className="images breakout">
           {images.site.map(({ node }) => {
             return (
-              <a href={node.childImageSharp.fluid.src}>
-                <figure key={node.id}>
+              <a
+                href={node.childImageSharp.fluid.src}
+                className="breakout_image"
+                key={node.id}
+              >
+                <figure>
                   <Img fluid={node.childImageSharp.fluid} />
                 </figure>
               </a>

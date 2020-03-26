@@ -4,8 +4,9 @@ import Img from 'gatsby-image';
 
 import Layout from '../../../components/layout';
 import SEO from '../../../components/seo';
+import Overview from '../../../components/overview';
 
-import './search-autocomplete.css';
+import { css } from '@emotion/core';
 
 const SearchAutocompletePage = () => {
   const data = useStaticQuery(graphql`
@@ -56,35 +57,23 @@ const SearchAutocompletePage = () => {
     <Layout>
       <SEO title="Kendrick Arnett › Projects › Search Autocomplete" />
       <h1>Search Autocomplete Experience</h1>
-      <h2>Overview</h2>
-      <h3>Challenge</h3>
-      <p>
-        Our e-commerce website had an out-of-the-box search experience that
+      <Overview
+        overview={{
+          challenge: `Our e-commerce website had an out-of-the-box search experience that
         wasn’t tailored to the behavior of our customers or to their shift
-        toward mobile devices.
-      </p>
-
-      <h3>Approach</h3>
-      <p>
-        We sought to drive engagement with product & search suggestions within
-        the search dropdown to streamline the customer experience. Our hope was
-        that we could surface just what the customer was looking for before
-        she’d even finished typing her search term.
-      </p>
-
-      <h3>Outcome</h3>
-      <p>
-        The project saw a 9.9% lift in RPV for customers who interact with a
-        search suggestion as well as a 27% lift in Conversion for customers who
-        interact with a suggested product in the autocomplete container.
-      </p>
-
-      <h3>Role</h3>
-      <p>
-        Lead UX Architect. I worked closely with our product owner and our
-        remote development team. Stakeholders included the VP of e-commerce and
-        our internal search specialist.
-      </p>
+        toward mobile devices.`,
+          approach: `We sought to drive engagement with product & search suggestions within
+        the search dropdown to streamline the customer experience. Our hope
+        was that we could surface just what the customer was looking for
+        before she’d even finished typing her search term.`,
+          outcome: `The project saw a 9.9% lift in RPV for customers who interact with a
+        search suggestion as well as a 27% lift in Conversion for customers
+        who interact with a suggested product in the autocomplete container.`,
+          role: `Lead UX Architect. I worked closely with our product owner and our
+        remote development team. Stakeholders included the VP of e-commerce
+        and our internal search specialist.`,
+        }}
+      ></Overview>
 
       <h2>Research</h2>
       <h3>Primary Research</h3>
@@ -106,7 +95,7 @@ const SearchAutocompletePage = () => {
       </p>
 
       <aside className="artifacts">
-        <div className="">
+        <div className="images">
           {images.research.map(({ node }) => {
             return (
               <figure key={node.id}>
@@ -122,32 +111,37 @@ const SearchAutocompletePage = () => {
       <p>
         After a quick survey of other retailers, I performed a heuristic
         analysis of our existing search functionality. Some of my findings were:
-        <ul>
-          <li>Only 1 autocomplete suggestion</li>
-          <li>No busy indicator</li>
-          <li>No contextual/category-specific search</li>
-          <li>
-            No images or product metadata to draw the eye or otherwise compel a
-            customer to interact
-          </li>
-          <li>
-            Search dropdown results were occluded by the keyboard on mobile
-          </li>
-          <li>
-            Our most common search terms were for category names, yet these
-            results were below product names
-          </li>
-        </ul>
       </p>
+      <ul>
+        <li>Only 1 autocomplete suggestion</li>
+        <li>No busy indicator</li>
+        <li>No contextual/category-specific search</li>
+        <li>
+          No images or product metadata to draw the eye or otherwise compel a
+          customer to interact
+        </li>
+        <li>Search dropdown results were occluded by the keyboard on mobile</li>
+        <li>
+          Our most common search terms were for category names, yet these
+          results were below product names
+        </li>
+      </ul>
 
       <aside className="artifacts artifacts-heuristic">
-        {images.heuristic.map(({ node }) => {
-          return (
-            <figure key={node.id}>
-              <Img fluid={node.childImageSharp.fluid} />
-            </figure>
-          );
-        })}
+        <div className="images">
+          {images.heuristic.map(({ node }) => {
+            return (
+              <figure key={node.id}>
+                <Img
+                  fluid={node.childImageSharp.fluid}
+                  css={css`
+                    width: 375px;
+                  `}
+                />
+              </figure>
+            );
+          })}
+        </div>
         <span className="caption">Old design used in heuristic analysis.</span>
       </aside>
 
@@ -172,11 +166,15 @@ const SearchAutocompletePage = () => {
       </p>
 
       <aside className="artifacts artifacts-ixd">
-        <div className="images">
+        <div className="images breakout">
           {images.ixd.map(({ node }) => {
             return (
-              <a href={node.childImageSharp.fluid.src}>
-                <figure key={node.id}>
+              <a
+                href={node.childImageSharp.fluid.src}
+                className="breakout_image"
+                key={node.id}
+              >
+                <figure>
                   <Img fluid={node.childImageSharp.fluid} />
                 </figure>
               </a>
@@ -193,11 +191,15 @@ const SearchAutocompletePage = () => {
       </p>
 
       <aside className="artifacts artifacts-wireframes">
-        <div className="images">
+        <div className="images breakout">
           {images.wireframes.map(({ node }) => {
             return (
-              <a href={node.childImageSharp.fluid.src}>
-                <figure key={node.id}>
+              <a
+                href={node.childImageSharp.fluid.src}
+                className="breakout_image"
+                key={node.id}
+              >
+                <figure>
                   <Img fluid={node.childImageSharp.fluid} />
                 </figure>
               </a>
@@ -215,11 +217,15 @@ const SearchAutocompletePage = () => {
       </p>
 
       <aside className="artifacts artifacts-visual-design">
-        <div className="images">
+        <div className="images breakout">
           {images.visualDesign.map(({ node }) => {
             return (
-              <a href={node.childImageSharp.fluid.src}>
-                <figure key={node.id}>
+              <a
+                href={node.childImageSharp.fluid.src}
+                className="breakout_image"
+                key={node.id}
+              >
+                <figure>
                   <Img fluid={node.childImageSharp.fluid} />
                 </figure>
               </a>

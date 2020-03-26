@@ -5,7 +5,9 @@ import Img from 'gatsby-image';
 import Layout from '../../../components/layout';
 import SEO from '../../../components/seo';
 
-import './ideation-brand-differentiators.css';
+import Overview from '../../../components/overview';
+import styled from '@emotion/styled';
+import { css } from '@emotion/core';
 
 const BrandDifferentiation = () => {
   const data = useStaticQuery(graphql`
@@ -56,34 +58,22 @@ const BrandDifferentiation = () => {
     <Layout>
       <SEO title="Kendrick Arnett › Projects › Ideation" />
       <h1>Ideation on Brand Differentiators</h1>
-      <h2>Overview</h2>
-      <h3>Challenge</h3>
-      <p>
-        An executive stakeholder wanted a large number of customer experience
-        ideas that emphasized the company’s competitive advantages.
-      </p>
-
-      <h3>Approach</h3>
-      <p>
-        We held several cross-functional Design Thinking workshops to generate
-        ideas drawing from the large body of knowledge of company associates.
-        Participants included members of teams in E-Commerce, Stores, Marketing,
-        Customer Relations, Development, Product Management, Merchandising, and
-        Data Science.
-      </p>
-
-      <h3>Outcome</h3>
-      <p>
-        I presented a mobile app prototype that provided 1:1 home decorating
-        appointments with a company associate, along with prioritized affinity
-        maps around two separate themes.
-      </p>
-
-      <h3>Role</h3>
-      <p>
-        I facilitated our design thinking sessions, built the digital artifacts,
-        and presented to stakeholders & our executive sponsor to obtain buy-in.
-      </p>
+      <Overview
+        overview={{
+          challenge: `An executive stakeholder wanted a large number of customer experience
+          ideas that emphasized the company’s competitive advantages.`,
+          approach: `We held several cross-functional Design Thinking workshops to generate
+          ideas drawing from the large body of knowledge of company associates.
+          Participants included members of teams in E-Commerce, Stores, Marketing,
+          Customer Relations, Development, Product Management, Merchandising, and
+          Data Science.`,
+          outcome: `I presented a mobile app prototype that provided 1:1 home decorating
+          appointments with a company associate, along with prioritized affinity
+          maps around two separate themes.`,
+          role: `I facilitated our design thinking sessions, built the digital artifacts,
+          and presented to stakeholders & our executive sponsor to obtain buy-in.`,
+        }}
+      ></Overview>
 
       <h2>Ideation Sessions</h2>
       <p>
@@ -94,11 +84,15 @@ const BrandDifferentiation = () => {
       </p>
 
       <aside className="artifacts artifacts-ideation artifacts-intro">
-        <div className="images">
+        <div className="images breakout">
           {images.p1labsIntro.map(({ node }) => {
             return (
-              <a href={node.childImageSharp.fluid.src}>
-                <figure key={node.id}>
+              <a
+                href={node.childImageSharp.fluid.src}
+                key={node.id}
+                className="breakout_image"
+              >
+                <figure>
                   <Img fluid={node.childImageSharp.fluid} />
                 </figure>
               </a>
@@ -117,11 +111,15 @@ const BrandDifferentiation = () => {
       </p>
 
       <aside className="artifacts artifacts-ideation artifacts-session">
-        <div className="images">
+        <div className="images breakout">
           {images.session.map(({ node }) => {
             return (
-              <a href={node.childImageSharp.fluid.src}>
-                <figure key={node.id}>
+              <a
+                href={node.childImageSharp.fluid.src}
+                key={node.id}
+                className="breakout_image"
+              >
+                <figure>
                   <Img fluid={node.childImageSharp.fluid} />
                 </figure>
               </a>
@@ -171,11 +169,15 @@ const BrandDifferentiation = () => {
       </p>
 
       <aside className="artifacts artifacts-ideation artifacts-proto">
-        <div className="images">
+        <div className="images breakout">
           {images.proto.map(({ node }) => {
             return (
-              <a href={node.childImageSharp.fluid.src}>
-                <figure key={node.id}>
+              <a
+                href={node.childImageSharp.fluid.src}
+                key={node.id}
+                className="breakout_image"
+              >
+                <figure>
                   <Img fluid={node.childImageSharp.fluid} />
                 </figure>
               </a>
