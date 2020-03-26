@@ -14,7 +14,7 @@ const MobileNavPage = ({ props }) => {
         filter: {
           extension: { regex: "/(jpe?g|png)/i" }
           relativePath: { regex: "/mobile-navigation/i" }
-          base: { regex: "/^[^-]/i" }
+          base: { regex: "/^[^-_]/i" }
         }
         sort: { fields: base, order: ASC }
       ) {
@@ -23,7 +23,7 @@ const MobileNavPage = ({ props }) => {
             id
             base
             childImageSharp {
-              fluid(maxWidth: 1024) {
+              fluid(maxWidth: 1200) {
                 src
                 ...GatsbyImageSharpFluid
               }
@@ -49,7 +49,6 @@ const MobileNavPage = ({ props }) => {
     }),
   };
 
-  console.dir(props);
   return (
     <Layout>
       <SEO title="Kendrick Arnett › Projects › Mobile Navigation Redesign" />
@@ -57,23 +56,21 @@ const MobileNavPage = ({ props }) => {
 
       <Overview
         overview={{
-          challenge: `Navigation site-wide displayed poor interaction design & feedback, and
-          presented few modes of alternate navigation or product finding for
-          customers who were having trouble finding the right product. We were
-          also presented the business need to make it easier for customers to
-          contact our Customer Relations team via lower-cost channels like chat or
-          text message.`,
-          approach: `Our analytics team identified the need for alternate navigation paths
-          beyond our primary category navigation. With this knowledge, I performed
-          a thorough competitive analysis and collected secondary research to
-          drive the experience.`,
-          outcome: `The site has clearer navigation indicators and customers can contact our
-          Customer Relations team instantly from our main navigation, where
-          they’re most likely to look for it. However, much of the design remains
-          in the team’s backlog.`,
-          role: `Lead UX Architect. I collaborated with our product owner, web analyst,
-          and our remote development team. The primary stakeholder was the VP of
-          e-commerce.`,
+          challenge: `Navigation elements of our e-commerce site displayed poor
+          interaction design & feedback, and presented few modes of alternate
+          navigation or product finding for customers who were having trouble
+          finding the right product.`,
+          approach: `Our analytics team identified the need for alternate
+          navigation paths beyond our primary category navigation. With this
+          knowledge, I performed a thorough competitive analysis and collected
+          secondary research to inform the experience.`,
+          outcome: `The site has clearer navigation indicators and customers can
+          get help instantly from our main navigation, where they’re most likely
+          to look for it. However, much of the design remains in the team’s
+          backlog.`,
+          role: `Lead UX Architect. I collaborated with our product owner, web
+          analyst, and our remote development team. The primary stakeholder was
+          the VP of e-commerce.`,
         }}
       ></Overview>
 
@@ -87,29 +84,31 @@ const MobileNavPage = ({ props }) => {
 
       <aside className="artifacts artifacts-competitive-analysis">
         <div
-          className="images breakout breakout-narrow"
+          className="breakout breakout-narrow"
           css={css`
             justify-content: center;
           `}
         >
-          {images.competitiveAnalysis.map(({ node }) => {
-            return (
-              <figure
-                key={node.id}
-                className="breakout_image breakout_image-space-md"
-                css={css`
-                  flex: 0;
-                `}
-              >
-                <Img
-                  fluid={node.childImageSharp.fluid}
+          <div className="breakout_images">
+            {images.competitiveAnalysis.map(({ node }) => {
+              return (
+                <figure
+                  key={node.id}
+                  className="breakout_image breakout_image-space-md"
                   css={css`
-                    width: 375px;
+                    flex: 0;
                   `}
-                />
-              </figure>
-            );
-          })}
+                >
+                  <Img
+                    fluid={node.childImageSharp.fluid}
+                    css={css`
+                      max-width: 300px;
+                    `}
+                  />
+                </figure>
+              );
+            })}
+          </div>
         </div>
         <span className="caption">
           Sample of sites used in competitive analysis.
@@ -148,20 +147,22 @@ const MobileNavPage = ({ props }) => {
       </p>
 
       <aside className="artifacts artifacts-nav artifacts-ixd">
-        <div className="images breakout breakout-narrow">
-          {images.ixd.map(({ node }) => {
-            return (
-              <a
-                href={node.childImageSharp.fluid.src}
-                className="breakout_image"
-                key={node.id}
-              >
-                <figure>
-                  <Img fluid={node.childImageSharp.fluid} />
-                </figure>
-              </a>
-            );
-          })}
+        <div className="breakout breakout-narrow">
+          <div className="breakout_images">
+            {images.ixd.map(({ node }) => {
+              return (
+                <a
+                  href={node.childImageSharp.fluid.src}
+                  className="breakout_image"
+                  key={node.id}
+                >
+                  <figure>
+                    <Img fluid={node.childImageSharp.fluid} />
+                  </figure>
+                </a>
+              );
+            })}
+          </div>
         </div>
         <span className="caption">Detailed IxD notes.</span>
       </aside>
@@ -174,22 +175,24 @@ const MobileNavPage = ({ props }) => {
       </p>
 
       <aside className="artifacts artifacts-nav artifacts-visual-design">
-        <div className="images breakout">
-          {images.visualDesign.map(({ node }) => {
-            return (
-              <a
-                href={node.childImageSharp.fluid.src}
-                className="breakout_image"
-                key={node.id}
-              >
-                <figure>
-                  <Img fluid={node.childImageSharp.fluid} />
-                </figure>
-              </a>
-            );
-          })}
+        <div className="breakout">
+          <div className="breakout_images">
+            {images.visualDesign.map(({ node }) => {
+              return (
+                <a
+                  href={node.childImageSharp.fluid.src}
+                  className="breakout_image"
+                  key={node.id}
+                >
+                  <figure>
+                    <Img fluid={node.childImageSharp.fluid} />
+                  </figure>
+                </a>
+              );
+            })}
+          </div>
         </div>
-        <span className="caption">Detailed IxD notes.</span>
+        <span className="caption">Sample of wireframes delivered to dev.</span>
       </aside>
 
       <h2>Next Steps</h2>
@@ -197,24 +200,9 @@ const MobileNavPage = ({ props }) => {
         The site has clearer navigation indicators and customers can contact our
         customer relations team instantly from our main navigation, where
         they’re most likely to look for it. Due to capital constraints, however,
-        much of the rest of the design remains in the team’s backlog.
+        some of the rest of the design remains in the team’s backlog.
       </p>
 
-      {/* {images.visualDesign.map(({ node }) => {
-        return <Img fluid={node.childImageSharp.fluid} key={node.id} />;
-      })}
-
-      {images.competitiveAnalysis.map(({ node }) => {
-        return <Img fluid={node.childImageSharp.fluid} key={node.id} />;
-      })}
-
-      {images.ixd.map(({ node }) => {
-        return <Img fluid={node.childImageSharp.fluid} key={node.id} />;
-      })}
-
-      {images.researchReport.map(({ node }) => {
-        return <Img fluid={node.childImageSharp.fluid} key={node.id} />;
-      })} */}
       <div className="link-wrapper">
         <Link to="/projects">← Back to Projects</Link>
       </div>

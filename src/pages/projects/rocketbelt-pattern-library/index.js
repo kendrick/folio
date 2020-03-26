@@ -15,7 +15,7 @@ const Rocketbelt = () => {
         filter: {
           extension: { regex: "/(jpe?g|png)/i" }
           relativePath: { regex: "/rocketbelt/i" }
-          base: { regex: "/^[^-]/i" }
+          base: { regex: "/^[^-_]/i" }
         }
         sort: { fields: base, order: ASC }
       ) {
@@ -24,7 +24,7 @@ const Rocketbelt = () => {
             id
             base
             childImageSharp {
-              fluid(maxWidth: 1024) {
+              fluid(maxWidth: 1200) {
                 src
                 ...GatsbyImageSharpFluid
               }
@@ -82,20 +82,22 @@ const Rocketbelt = () => {
       </p>
 
       <aside className="artifacts artifacts-rb artifacts-intro">
-        <div className="images breakout">
-          {images.intro.map(({ node }) => {
-            return (
-              <a
-                href={node.childImageSharp.fluid.src}
-                className="breakout_image"
-                key={node.id}
-              >
-                <figure>
-                  <Img fluid={node.childImageSharp.fluid} />
-                </figure>
-              </a>
-            );
-          })}
+        <div className="breakout">
+          <div className="breakout_images">
+            {images.intro.map(({ node }) => {
+              return (
+                <a
+                  href={node.childImageSharp.fluid.src}
+                  className="breakout_image"
+                  key={node.id}
+                >
+                  <figure>
+                    <Img fluid={node.childImageSharp.fluid} />
+                  </figure>
+                </a>
+              );
+            })}
+          </div>
         </div>
         <span className="caption">
           Selected slides from the audit & responsive layout presentation.
@@ -121,20 +123,22 @@ const Rocketbelt = () => {
       </p>
 
       <aside className="artifacts artifacts-rb artifacts-sketch">
-        <div className="images breakout">
-          {images.sketch.map(({ node }) => {
-            return (
-              <a
-                href={node.childImageSharp.fluid.src}
-                className="breakout_image"
-                key={node.id}
-              >
-                <figure>
-                  <Img fluid={node.childImageSharp.fluid} />
-                </figure>
-              </a>
-            );
-          })}
+        <div className="breakout">
+          <div className="breakout_images">
+            {images.sketch.map(({ node }) => {
+              return (
+                <a
+                  href={node.childImageSharp.fluid.src}
+                  className="breakout_image"
+                  key={node.id}
+                >
+                  <figure>
+                    <Img fluid={node.childImageSharp.fluid} />
+                  </figure>
+                </a>
+              );
+            })}
+          </div>
         </div>
         <span className="caption">
           Sample composite symbols from the Sketch library.
@@ -147,20 +151,22 @@ const Rocketbelt = () => {
       </p>
 
       <aside className="artifacts artifacts-rb artifacts-site">
-        <div className="images breakout">
-          {images.site.map(({ node }) => {
-            return (
-              <a
-                href={node.childImageSharp.fluid.src}
-                className="breakout_image"
-                key={node.id}
-              >
-                <figure>
-                  <Img fluid={node.childImageSharp.fluid} />
-                </figure>
-              </a>
-            );
-          })}
+        <div className="breakout">
+          <div className="breakout_images">
+            {images.site.map(({ node }) => {
+              return (
+                <a
+                  href={node.childImageSharp.fluid.src}
+                  className="breakout_image"
+                  key={node.id}
+                >
+                  <figure>
+                    <Img fluid={node.childImageSharp.fluid} />
+                  </figure>
+                </a>
+              );
+            })}
+          </div>
         </div>
         <span className="caption">
           Sample composite symbols from the Sketch library.

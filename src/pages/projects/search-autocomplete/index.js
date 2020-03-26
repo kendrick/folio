@@ -15,7 +15,7 @@ const SearchAutocompletePage = () => {
         filter: {
           extension: { regex: "/(jpe?g|png)/i" }
           relativePath: { regex: "/search-autocomplete/i" }
-          base: { regex: "/^[^-]/i" }
+          base: { regex: "/^[^-_]/i" }
         }
         sort: { fields: base, order: ASC }
       ) {
@@ -24,7 +24,7 @@ const SearchAutocompletePage = () => {
             id
             base
             childImageSharp {
-              fluid(maxWidth: 1024) {
+              fluid(maxWidth: 1200) {
                 ...GatsbyImageSharpFluid
                 src
               }
@@ -60,12 +60,12 @@ const SearchAutocompletePage = () => {
       <Overview
         overview={{
           challenge: `Our e-commerce website had an out-of-the-box search experience that
-        wasn’t tailored to the behavior of our customers or to their shift
-        toward mobile devices.`,
-          approach: `We sought to drive engagement with product & search suggestions within
-        the search dropdown to streamline the customer experience. Our hope
-        was that we could surface just what the customer was looking for
-        before she’d even finished typing her search term.`,
+          wasn’t tailored to the behavior of our customers or to their shift
+          toward mobile devices.`,
+          approach: `We sought to accelerate the customer experience by driving
+          engagement with product & search suggestions within the search
+          dropdown. Our hope was that we could surface just what the customer
+          was looking for before they’d even finished typing her search term.`,
           outcome: `The project saw a 9.9% lift in RPV for customers who interact with a
         search suggestion as well as a 27% lift in Conversion for customers
         who interact with a suggested product in the autocomplete container.`,
@@ -135,7 +135,7 @@ const SearchAutocompletePage = () => {
                 <Img
                   fluid={node.childImageSharp.fluid}
                   css={css`
-                    width: 375px;
+                    width: ${375 / 1.25}px;
                   `}
                 />
               </figure>
@@ -166,22 +166,24 @@ const SearchAutocompletePage = () => {
       </p>
 
       <aside className="artifacts artifacts-ixd">
-        <div className="images breakout">
-          {images.ixd.map(({ node }) => {
-            return (
-              <a
-                href={node.childImageSharp.fluid.src}
-                className="breakout_image"
-                key={node.id}
-              >
-                <figure>
-                  <Img fluid={node.childImageSharp.fluid} />
-                </figure>
-              </a>
-            );
-          })}
+        <div className="breakout">
+          <div className="breakout_images">
+            {images.ixd.map(({ node }) => {
+              return (
+                <a
+                  href={node.childImageSharp.fluid.src}
+                  className="breakout_image"
+                  key={node.id}
+                >
+                  <figure>
+                    <Img fluid={node.childImageSharp.fluid} />
+                  </figure>
+                </a>
+              );
+            })}
+          </div>
         </div>
-        <span className="caption">Detailed IxD notes.</span>
+        <span className="caption">Sample of IxD notes.</span>
       </aside>
 
       <h3>Wireframes</h3>
@@ -206,7 +208,9 @@ const SearchAutocompletePage = () => {
             );
           })}
         </div>
-        <span className="caption">Mobile wireframe & desktop coverage.</span>
+        <span className="caption">
+          Sample mobile wireframe & desktop coverage visual.
+        </span>
       </aside>
 
       <h3>Visual Design</h3>
@@ -232,7 +236,9 @@ const SearchAutocompletePage = () => {
             );
           })}
         </div>
-        <span className="caption">Visual design delivered to the team.</span>
+        <span className="caption">
+          Sample of visual design delivered to the team.
+        </span>
       </aside>
 
       <h3>Next Steps</h3>
@@ -248,25 +254,6 @@ const SearchAutocompletePage = () => {
         improvement. The desktop design hasn’t been fully realized and our
         search results page needs to better align with the project.
       </p>
-
-      {/* {images.research.map(({ node }) => {
-        return <Img fluid={node.childImageSharp.fluid} key={node.id} />;
-      })}
-      {images.visualDesign.map(({ node }) => {
-        return <Img fluid={node.childImageSharp.fluid} key={node.id} />;
-      })}
-      {images.wireframeDesktop.map(({ node }) => {
-        return <Img fluid={node.childImageSharp.fluid} key={node.id} />;
-      })}
-      {images.wireframeMobile.map(({ node }) => {
-        return <Img fluid={node.childImageSharp.fluid} key={node.id} />;
-      })}
-      {images.ixd.map(({ node }) => {
-        return <Img fluid={node.childImageSharp.fluid} key={node.id} />;
-      })}
-      {images.heuristic.map(({ node }) => {
-        return <Img fluid={node.childImageSharp.fluid} key={node.id} />;
-      })} */}
 
       <div className="link-wrapper">
         <Link to="/projects">← Back to Projects</Link>

@@ -91,10 +91,10 @@ const Layout = ({ children, headerStyle }) => {
 
     h3,
     h4 {
-      font-size: ${fontSize(1)};
+      font-size: ${fontSize(0)};
 
       ${media[1]} {
-        font-size: ${fontSize(2)};
+        font-size: ${fontSize(1)};
       }
     }
 
@@ -110,19 +110,41 @@ const Layout = ({ children, headerStyle }) => {
       }
     }
 
+    .artifacts {
+      margin-bottom: calc(var(--line-height) * 1rem);
+
+      .caption {
+        font-size: ${fontSize(-1)};
+        font-style: italic;
+        color: ${colors.gray.base};
+      }
+
+      figure {
+        margin-bottom: 0;
+      }
+    }
+
     .breakout {
       width: 100vw;
       position: relative;
       left: 50%;
       transform: translateX(-50%);
-      padding: calc(var(--padding-breakout) / 2);
+      padding: 0 calc(var(--padding-breakout) / 2);
       display: flex;
 
       &.breakout-narrow {
         width: auto;
       }
 
+      .breakout_images {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        grid-gap: 1rem;
+      }
+
       .breakout_image {
+        margin-bottom: 0;
         flex: 1;
 
         &:not(:last-of-type) {
