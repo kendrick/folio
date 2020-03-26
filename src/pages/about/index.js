@@ -78,7 +78,14 @@ const AboutPage = () => (
     </p>
 
     <FormWrapper>
-      <Form name="contact" method="POST" data-netlify="true">
+      <Form
+        name="contact"
+        method="POST"
+        netlify-honeypot="bot-field"
+        data-netlify="true"
+        action="/about?submitted=true"
+      >
+        <input type="hidden" name="bot-field" />
         <label className="contact_name">
           Your Name
           <input type="text" name="name" />
