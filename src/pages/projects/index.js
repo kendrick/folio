@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 import Layout from '../../components/layout';
 import Image from '../../components/image';
 import SEO from '../../components/seo';
+import Img from 'gatsby-image';
 
 import { css } from '@emotion/core';
 import styled from '@emotion/styled';
@@ -48,13 +49,20 @@ const ProjectLi = styled.li`
 
   &.card a {
     display: flex;
-    padding: 1rem;
-    min-height: 200px;
+    flex-direction: column;
+    padding: 2rem 2rem;
+    position: relative;
     width: 100%;
+    align-items: flex-start;
+    justify-content: center;
     text-decoration: none;
 
     &:hover {
       color: ${colors.gray.minus1};
+
+      .card_rule {
+        transform: scaleX(1);
+      }
     }
 
     &:active {
@@ -63,58 +71,93 @@ const ProjectLi = styled.li`
   }
 
   h2 {
-    align-self: flex-end;
+    align-self: flex-start;
     margin: 0;
-    font-size: ${fontSize(1)};
+    font-size: ${fontSize(0)};
     color: ${colors.gray.minus2};
     transition: color 100ms linear;
   }
+
+  .card_summary {
+    position: relative;
+
+    font-size: ${fontSize(-2)};
+    color: ${colors.gray.base};
+    font-style: italic;
+  }
+  .card_rule {
+    display: block;
+    width: calc(100%);
+    height: 4px;
+    background: #2e97b9;
+    margin: 0.5rem 0;
+    transform: scaleX(0.1);
+    transform-origin: 0 50%;
+    transition: transform 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  }
 `;
 
-const ProjectsIndexPage = () => (
-  <Layout>
-    <SEO title="Kendrick Arnett › Projects" />
-    <h1>Selected Projects</h1>
+const ProjectsIndexPage = () => {
+  return (
+    <Layout>
+      <SEO title="Kendrick Arnett › Projects" />
+      <h1>Selected Projects</h1>
 
-    <ProjectsUl className="card-list list-horizontal">
-      <ProjectLi className="card card-search-autocomplete">
-        <Link to={`/projects/search-autocomplete`} key="search-autocomplete">
-          <h2>
-            Search Autocomplete Experience<small></small>
-          </h2>
-        </Link>
-      </ProjectLi>
-      <ProjectLi className="card">
-        <Link to={`/projects/mobile-navigation`} key="mobile-navigation">
-          <h2>Mobile Navigation Redesign</h2>
-        </Link>
-      </ProjectLi>
-      <ProjectLi className="card">
-        <Link
-          to={`/projects/ideation-brand-differentiators`}
-          key="ideation-brand-differentiators"
-        >
-          <h2>Ideation on Brand Differentiators</h2>
-        </Link>
-      </ProjectLi>
-      <ProjectLi className="card">
-        <Link
-          to={`/projects/rocketbelt-pattern-library`}
-          key="rocketbelt-pattern-library"
-        >
-          <h2>Rocketbelt Pattern Library</h2>
-        </Link>
-      </ProjectLi>
-    </ProjectsUl>
+      <ProjectsUl className="card-list list-horizontal">
+        <ProjectLi className="card card-search-autocomplete">
+          <Link to={`/projects/search-autocomplete`} key="search-autocomplete">
+            <h2>Search Autocomplete Experience</h2>
+            <div className="card_rule"></div>
+            <small className="card_summary">
+              Helping customers find the right item faster.
+            </small>
+          </Link>
+        </ProjectLi>
+        <ProjectLi className="card">
+          <Link to={`/projects/mobile-navigation`} key="mobile-navigation">
+            <h2>Mobile Navigation Redesign</h2>
+            <div className="card_rule"></div>
+            <small className="card_summary">
+              Eliminating dead ends and improving IxD.
+            </small>
+          </Link>
+        </ProjectLi>
+        <ProjectLi className="card">
+          <Link
+            to={`/projects/ideation-brand-differentiators`}
+            key="ideation-brand-differentiators"
+          >
+            <h2>Ideation on Brand Differentiators</h2>
+            <div className="card_rule"></div>
+            <small className="card_summary">
+              Cross-functional collaboration brings company expertise to
+              customers.
+            </small>
+          </Link>
+        </ProjectLi>
+        <ProjectLi className="card">
+          <Link
+            to={`/projects/rocketbelt-pattern-library`}
+            key="rocketbelt-pattern-library"
+          >
+            <h2>Rocketbelt Pattern Library</h2>
+            <div className="card_rule"></div>
+            <small className="card_summary">
+              Building bridges & fostering consistency for designers & devs.
+            </small>
+          </Link>
+        </ProjectLi>
+      </ProjectsUl>
 
-    {/* <h2>Other Project Highlights</h2>
+      {/* <h2>Other Project Highlights</h2>
     <ul>
       <li>Accessiblity Best Practices & Site Rehabilitation</li>
       <li>Taxonomy Research</li>
       <li>Checkout & Order Summary Refresh</li>
       <li>Promo Experience on PLPs & PDPs</li>
     </ul> */}
-  </Layout>
-);
+    </Layout>
+  );
+};
 
 export default ProjectsIndexPage;
