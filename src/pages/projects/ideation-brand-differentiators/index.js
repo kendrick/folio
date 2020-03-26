@@ -16,7 +16,7 @@ const BrandDifferentiation = () => {
         filter: {
           extension: { regex: "/(jpe?g|png)/i" }
           relativePath: { regex: "/ideation-brand-differentiators/i" }
-          base: { regex: "/^[^-]/i" }
+          base: { regex: "/^[^-_]/i" }
         }
         sort: { fields: base, order: ASC }
       ) {
@@ -25,7 +25,7 @@ const BrandDifferentiation = () => {
             id
             base
             childImageSharp {
-              fluid(maxWidth: 1024) {
+              fluid(maxWidth: 1200) {
                 src
                 ...GatsbyImageSharpFluid
               }
@@ -84,20 +84,22 @@ const BrandDifferentiation = () => {
       </p>
 
       <aside className="artifacts artifacts-ideation artifacts-intro">
-        <div className="images breakout">
-          {images.p1labsIntro.map(({ node }) => {
-            return (
-              <a
-                href={node.childImageSharp.fluid.src}
-                key={node.id}
-                className="breakout_image"
-              >
-                <figure>
-                  <Img fluid={node.childImageSharp.fluid} />
-                </figure>
-              </a>
-            );
-          })}
+        <div className="breakout">
+          <div className="breakout_images">
+            {images.p1labsIntro.map(({ node }) => {
+              return (
+                <a
+                  href={node.childImageSharp.fluid.src}
+                  key={node.id}
+                  className="breakout_image"
+                >
+                  <figure>
+                    <Img fluid={node.childImageSharp.fluid} />
+                  </figure>
+                </a>
+              );
+            })}
+          </div>
         </div>
         <span className="caption">
           Excerpts from our introduction to the method.
@@ -111,20 +113,22 @@ const BrandDifferentiation = () => {
       </p>
 
       <aside className="artifacts artifacts-ideation artifacts-session">
-        <div className="images breakout">
-          {images.session.map(({ node }) => {
-            return (
-              <a
-                href={node.childImageSharp.fluid.src}
-                key={node.id}
-                className="breakout_image"
-              >
-                <figure>
-                  <Img fluid={node.childImageSharp.fluid} />
-                </figure>
-              </a>
-            );
-          })}
+        <div className="breakout">
+          <div className="breakout_images">
+            {images.session.map(({ node }) => {
+              return (
+                <a
+                  href={node.childImageSharp.fluid.src}
+                  key={node.id}
+                  className="breakout_image"
+                >
+                  <figure>
+                    <Img fluid={node.childImageSharp.fluid} />
+                  </figure>
+                </a>
+              );
+            })}
+          </div>
         </div>
         <span className="caption">
           Clustered Post-Its from two of the sessions.
@@ -169,20 +173,22 @@ const BrandDifferentiation = () => {
       </p>
 
       <aside className="artifacts artifacts-ideation artifacts-proto">
-        <div className="images breakout">
-          {images.proto.map(({ node }) => {
-            return (
-              <a
-                href={node.childImageSharp.fluid.src}
-                key={node.id}
-                className="breakout_image"
-              >
-                <figure>
-                  <Img fluid={node.childImageSharp.fluid} />
-                </figure>
-              </a>
-            );
-          })}
+        <div className="breakout">
+          <div className="breakout_images">
+            {images.proto.map(({ node }) => {
+              return (
+                <a
+                  href={node.childImageSharp.fluid.src}
+                  key={node.id}
+                  className="breakout_image"
+                >
+                  <figure>
+                    <Img fluid={node.childImageSharp.fluid} />
+                  </figure>
+                </a>
+              );
+            })}
+          </div>
         </div>
         <span className="caption">Selected screens from the prototype.</span>
       </aside>
@@ -190,7 +196,8 @@ const BrandDifferentiation = () => {
       <h2>Next Steps</h2>
       <p>
         Unfortunately, this project wasn't fully realized as our executive
-        sponsor left the company.
+        sponsor left the company. Nonetheless, the collective experience broke
+        down organizational silos and built long-standing bridges across teams.
       </p>
 
       {/* {images.session.map(({ node }) => {
