@@ -40,10 +40,17 @@ const Layout = ({ children, headerStyle }) => {
           .chroma(colors.gray.minus2)
           .alpha(0.06)
           .css()};
+      --box-shadow-big: 0 2px 12px 0
+        ${colors
+          .chroma(colors.gray.minus2)
+          .alpha(0.12)
+          .css()};
       --border-color-light: ${colors
         .chroma(colors.gray.minus2)
         .alpha(0.1)
         .css()};
+
+      --ease-out: cubic-bezier(0.39, 0.575, 0.565, 1);
 
       ${media[1]} {
         --header-lr-margin: 2rem;
@@ -107,6 +114,37 @@ const Layout = ({ children, headerStyle }) => {
 
       ${media[1]} {
         line-height: var(--line-height);
+      }
+    }
+
+    .button a {
+      text-decoration: none;
+
+      &:active {
+        color: inherit;
+      }
+    }
+
+    button,
+    .button {
+      display: inline-block;
+      background: transparent;
+      border: 1.5px solid #4911ae;
+      color: #4911ae;
+      padding: 0.5em 1em;
+      transition: box-shadow 150ms var(--ease-out);
+      cursor: pointer;
+
+      &:hover {
+        background: ${colors
+          .chroma('#4911ae')
+          .alpha(0.1)
+          .css()};
+        box-shadow: var(--box-shadow-big);
+      }
+
+      &:active {
+        box-shadow: var(--box-shadow);
       }
     }
 

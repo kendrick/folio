@@ -6,6 +6,7 @@ import Layout from '../../../components/layout';
 import Image from '../../../components/image';
 import SEO from '../../../components/seo';
 
+import { css } from '@emotion/core';
 import Overview from '../../../components/overview';
 
 const Rocketbelt = () => {
@@ -192,7 +193,12 @@ const Rocketbelt = () => {
         return <Img fluid={node.childImageSharp.fluid} key={node.id} />;
       })} */}
 
-      <div className="link-wrapper">
+      <div
+        className="button"
+        css={css`
+          margin-bottom: 2rem;
+        `}
+      >
         <Link to="/projects">← Back to Projects</Link>
       </div>
     </Layout>

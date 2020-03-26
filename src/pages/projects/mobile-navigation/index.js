@@ -203,7 +203,12 @@ const MobileNavPage = ({ props }) => {
         some of the rest of the design remains in the team’s backlog.
       </p>
 
-      <div className="link-wrapper">
+      <div
+        className="button"
+        css={css`
+          margin-bottom: 2rem;
+        `}
+      >
         <Link to="/projects">← Back to Projects</Link>
       </div>
     </Layout>

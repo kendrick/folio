@@ -255,7 +255,12 @@ const SearchAutocompletePage = () => {
         search results page needs to better align with the project.
       </p>
 
-      <div className="link-wrapper">
+      <div
+        className="button"
+        css={css`
+          margin-bottom: 2rem;
+        `}
+      >
         <Link to="/projects">← Back to Projects</Link>
       </div>
     </Layout>

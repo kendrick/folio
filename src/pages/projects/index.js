@@ -93,7 +93,7 @@ const ProjectLi = styled.li`
     margin: 0.5rem 0;
     transform: scaleX(0.1);
     transform-origin: 0 50%;
-    transition: transform 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
+    transition: transform 300ms var(--ease-out);
   }
 `;
 

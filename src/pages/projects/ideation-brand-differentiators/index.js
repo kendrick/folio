@@ -215,7 +215,12 @@ const BrandDifferentiation = () => {
       {images.p1labsIntro.map(({ node }) => {
         return <Img fluid={node.childImageSharp.fluid} key={node.id} />;
       })} */}
-      <div className="link-wrapper">
+      <div
+        className="button"
+        css={css`
+          margin-bottom: 2rem;
+        `}
+      >
         <Link to="/projects">← Back to Projects</Link>
       </div>
     </Layout>
