@@ -186,12 +186,10 @@ const Layout = ({ children, headerStyle }) => {
         flex: 1;
 
         &:not(:last-of-type) {
-          margin-right: 1rem;
         }
 
         &.breakout_image-space-md {
           &:not(:last-of-type) {
-            margin-right: 2rem;
           }
         }
       }

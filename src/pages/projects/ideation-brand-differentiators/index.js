@@ -43,6 +43,9 @@ const BrandDifferentiation = () => {
     clusteredIdeas: data.allFile.edges.filter(({ node }) => {
       return node.base.includes('clustered-ideas-');
     }),
+    affinityMaps: data.allFile.edges.filter(({ node }) => {
+      return node.base.includes('affinity-map-');
+    }),
     p1labsIntro: data.allFile.edges.filter(({ node }) => {
       return node.base.includes('p1labs-intro');
     }),
@@ -147,6 +150,29 @@ const BrandDifferentiation = () => {
         perfect item.
       </p>
 
+      <aside className="artifacts artifacts-ideation artifacts-affinity-maps">
+        <div className="breakout">
+          <div className="breakout_images">
+            {images.affinityMaps.map(({ node }) => {
+              return (
+                <a
+                  href={node.childImageSharp.fluid.src}
+                  key={node.id}
+                  className="breakout_image"
+                >
+                  <figure>
+                    <Img fluid={node.childImageSharp.fluid} />
+                  </figure>
+                </a>
+              );
+            })}
+          </div>
+        </div>
+        <span className="caption">
+          Affinity maps created from the sessions' ideas.
+        </span>
+      </aside>
+
       <p>
         If we knew specifics around a customer’s sense of style, we could offer
         tailor-made recommendations. We also surfaced an idea that involved
@@ -156,7 +182,7 @@ const BrandDifferentiation = () => {
 
       <p>
         Based on these observations, the group decided to solve several of these
-        customer needs at once with a mobile app.{' '}
+        customer needs at once with a mobile app.
       </p>
 
       <h2>Design</h2>
@@ -200,21 +226,6 @@ const BrandDifferentiation = () => {
         down organizational silos and built long-standing bridges across teams.
       </p>
 
-      {/* {images.session.map(({ node }) => {
-        return <Img fluid={node.childImageSharp.fluid} key={node.id} />;
-      })}
-      {images.proto.map(({ node }) => {
-        return <Img fluid={node.childImageSharp.fluid} key={node.id} />;
-      })}
-      {images.affinityMaps.map(({ node }) => {
-        return <Img fluid={node.childImageSharp.fluid} key={node.id} />;
-      })}
-      {images.clusteredIdeas.map(({ node }) => {
-        return <Img fluid={node.childImageSharp.fluid} key={node.id} />;
-      })}
-      {images.p1labsIntro.map(({ node }) => {
-        return <Img fluid={node.childImageSharp.fluid} key={node.id} />;
-      })} */}
       <div
         className="button"
         css={css`
