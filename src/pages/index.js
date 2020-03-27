@@ -9,7 +9,7 @@ import { css } from '@emotion/core';
 import { media } from '../utils/rocketbelt';
 
 const IndexPage = () => (
-  <Layout headerStyle="no-name">
+  <Layout>
     <SEO title="Kendrick Arnett › UX Leader" />
     <div
       className="content"

@@ -29,8 +29,6 @@ const Header = ({ siteTitle, headerStyle }) => (
           margin-left: var(--header-lr-margin);
           text-decoration: none;
           color: white;
-          opacity: ${headerStyle === 'no-name' ? 0 : 1};
-          font-weight: 300;
         `}
       >
         <span
