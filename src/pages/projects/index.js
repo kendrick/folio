@@ -147,6 +147,18 @@ const ProjectsIndexPage = () => {
             </small>
           </Link>
         </ProjectLi>
+        <ProjectLi className="card">
+          <Link
+            to={`/projects/ab-multivariate-testing`}
+            key="ab-multivariate-testing"
+          >
+            <h2>A/B & Multivariate Testing</h2>
+            <div className="card_rule"></div>
+            <small className="card_summary">
+              Quantitatively measuring the experience.
+            </small>
+          </Link>
+        </ProjectLi>
       </ProjectsUl>
 
       {/* <h2>Other Project Highlights</h2>

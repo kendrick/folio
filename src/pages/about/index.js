@@ -103,45 +103,54 @@ const AboutPage = () => (
       colleagues in both professions.
     </p>
     <div
-      className="about_cards"
       css={css`
-        display: grid;
-        grid-template-rows: auto;
-        grid-gap: 1rem;
+        display: flex;
 
         ${media[1]} {
-          max-width: 640px;
-          grid-template-columns: 1fr 1fr;
+          justify-content: center;
         }
       `}
     >
-      <Card>
-        <h2 className="overview_subhead">I'm Borderline Obsessed With…</h2>
-        <div className="overview_text">
-          <ul>
-            <li>Black holes</li>
-            <li>
-              Public lands & the National Park system (America's Best Idea!)
-            </li>
-            <li>Coffee</li>
-            <li>BBQ</li>
-          </ul>
-        </div>
-      </Card>
+      <div
+        className="about_cards"
+        css={css`
+          display: grid;
+          grid-template-rows: auto;
+          grid-gap: 1rem;
 
-      <Card>
-        <h2 className="overview_subhead">I Have Strong Opinions About…</h2>
-        <div className="overview_text">
-          <ul>
-            <li>Participative leadership</li>
-            <li>Oxford commas</li>
-            <li>CSS-in-JS</li>
-          </ul>
-          <p>… but only because they're worth doing right.</p>
-        </div>
-      </Card>
+          ${media[1]} {
+            max-width: 640px;
+            grid-template-columns: 1fr 1fr;
+          }
+        `}
+      >
+        <Card>
+          <h2 className="overview_subhead">I'm Borderline Obsessed With…</h2>
+          <div className="overview_text">
+            <ul>
+              <li>Black holes</li>
+              <li>
+                Public lands & the National Park system (America's Best Idea!)
+              </li>
+              <li>Coffee</li>
+              <li>BBQ</li>
+            </ul>
+          </div>
+        </Card>
+
+        <Card>
+          <h2 className="overview_subhead">I Have Strong Opinions About…</h2>
+          <div className="overview_text">
+            <ul>
+              <li>Participative leadership</li>
+              <li>Oxford commas</li>
+              <li>CSS-in-JS</li>
+            </ul>
+            <p>… but only because they're worth doing right.</p>
+          </div>
+        </Card>
+      </div>
     </div>
-
     <h2>Contact Kendrick</h2>
     <p>
       I'd love to build something awesome with you! Send me a note below and

@@ -38,19 +38,36 @@ const Overview = ({ children, overview }) => {
 
   return (
     <Over>
-      <H>Overview</H>
+      {!overview.noHeading && <H>Overview</H>}
+
       <div className="overview_lines">
-        <SubH className="overview_subhead">Challenge</SubH>
-        <p className="overview_text">{overview.challenge}</p>
+        {overview.challenge && (
+          <>
+            <SubH className="overview_subhead">Challenge</SubH>
+            <p className="overview_text">{overview.challenge}</p>
+          </>
+        )}
 
-        <SubH className="overview_subhead">Approach</SubH>
-        <p className="overview_text">{overview.approach}</p>
+        {overview.approach && (
+          <>
+            <SubH className="overview_subhead">Approach</SubH>
+            <p className="overview_text">{overview.approach}</p>
+          </>
+        )}
 
-        <SubH className="overview_subhead">Outcome</SubH>
-        <p className="overview_text">{overview.outcome}</p>
+        {overview.outcome && (
+          <>
+            <SubH className="overview_subhead">Outcome</SubH>
+            <p className="overview_text">{overview.outcome}</p>
+          </>
+        )}
 
-        <SubH className="overview_subhead">Role</SubH>
-        <p className="overview_text">{overview.role}</p>
+        {overview.role && (
+          <>
+            <SubH className="overview_subhead">Role</SubH>
+            <p className="overview_text">{overview.role}</p>
+          </>
+        )}
       </div>
     </Over>
   );
