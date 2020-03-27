@@ -152,8 +152,18 @@ const Rocketbelt = () => {
       </p>
 
       <aside className="artifacts artifacts-rb artifacts-site">
-        <div className="breakout">
-          <div className="breakout_images">
+        <div
+          className="breakout"
+          css={css`
+            justify-content: center;
+          `}
+        >
+          <div
+            className="breakout_images"
+            css={css`
+              max-width: 640px;
+            `}
+          >
             {images.site.map(({ node }) => {
               return (
                 <a
@@ -170,7 +180,7 @@ const Rocketbelt = () => {
           </div>
         </div>
         <span className="caption">
-          Sample composite symbols from the Sketch library.
+          Selected components from the sample site.
         </span>
       </aside>
 
@@ -183,15 +193,6 @@ const Rocketbelt = () => {
         information architecture is a bit muddy. We’re currently working on a
         redesign of the site that will remedy these issues.
       </p>
-      {/* {images.intro.map(({ node }) => {
-        return <Img fluid={node.childImageSharp.fluid} key={node.id} />;
-      })}
-      {images.sketch.map(({ node }) => {
-        return <Img fluid={node.childImageSharp.fluid} key={node.id} />;
-      })}
-      {images.site.map(({ node }) => {
-        return <Img fluid={node.childImageSharp.fluid} key={node.id} />;
-      })} */}
 
       <div
         className="button"
