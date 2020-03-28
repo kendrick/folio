@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
+import Artifacts from '../../../components/artifacts';
 import Layout from '../../../components/layout';
 import Image from '../../../components/image';
 import SEO from '../../../components/seo';
@@ -82,28 +83,13 @@ const Rocketbelt = () => {
         similar-but-different shades of blue in use!)
       </p>
 
-      <aside className="artifacts artifacts-rb artifacts-intro">
-        <div className="breakout">
-          <div className="breakout_images">
-            {images.intro.map(({ node }) => {
-              return (
-                <a
-                  href={node.childImageSharp.fluid.src}
-                  className="breakout_image"
-                  key={node.id}
-                >
-                  <figure>
-                    <Img fluid={node.childImageSharp.fluid} />
-                  </figure>
-                </a>
-              );
-            })}
-          </div>
-        </div>
-        <span className="caption">
-          Selected slides from the audit & responsive layout presentation.
-        </span>
-      </aside>
+      <Artifacts
+        artifacts={images.intro}
+        caption={
+          'Selected slides from the audit & responsive layout presentation.'
+        }
+        imageMinWidths={['140px', '180px']}
+      />
 
       <p>
         After the conversations, I did a quick competitive analysis to determine
@@ -123,66 +109,22 @@ const Rocketbelt = () => {
         development team.
       </p>
 
-      <aside className="artifacts artifacts-rb artifacts-sketch">
-        <div className="breakout">
-          <div className="breakout_images">
-            {images.sketch.map(({ node }) => {
-              return (
-                <a
-                  href={node.childImageSharp.fluid.src}
-                  className="breakout_image"
-                  key={node.id}
-                >
-                  <figure>
-                    <Img fluid={node.childImageSharp.fluid} />
-                  </figure>
-                </a>
-              );
-            })}
-          </div>
-        </div>
-        <span className="caption">
-          Sample composite symbols from the Sketch library.
-        </span>
-      </aside>
+      <Artifacts
+        artifacts={images.sketch}
+        caption={'Sample composite symbols from the Sketch library.'}
+      />
 
       <p>
         Once a primary collection of patterns was built, I recruited developers
         to help us round it out.
       </p>
 
-      <aside className="artifacts artifacts-rb artifacts-site">
-        <div
-          className="breakout"
-          css={css`
-            justify-content: center;
-          `}
-        >
-          <div
-            className="breakout_images"
-            css={css`
-              max-width: 640px;
-            `}
-          >
-            {images.site.map(({ node }) => {
-              return (
-                <a
-                  href={node.childImageSharp.fluid.src}
-                  className="breakout_image"
-                  key={node.id}
-                >
-                  <figure>
-                    <Img fluid={node.childImageSharp.fluid} />
-                  </figure>
-                </a>
-              );
-            })}
-          </div>
-        </div>
-        <span className="caption">
-          Selected components from the sample site.
-        </span>
-      </aside>
+      <Artifacts
+        artifacts={images.site}
+        caption={'Selected component pages from the sample site.'}
+        imageMinWidths={['140px', '240px']}
+        containerMaxWidths={['100%', '640px']}
+      />
 
       <h2>Next Steps</h2>
       <p>

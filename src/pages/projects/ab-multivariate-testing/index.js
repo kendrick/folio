@@ -2,13 +2,10 @@ import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import Layout from '../../../components/layout';
-import Image from '../../../components/image';
+import Artifacts from '../../../components/artifacts';
 import SEO from '../../../components/seo';
 
 import { css } from '@emotion/core';
-
-import Zoom from 'react-medium-image-zoom';
-import 'react-medium-image-zoom/dist/styles.css';
 
 const AbSplitMultivariateTesting = () => {
   const data = useStaticQuery(graphql`
@@ -74,26 +71,12 @@ const AbSplitMultivariateTesting = () => {
         Checkout experience.
       </p>
 
-      <aside className="artifacts artifacts-ab-multivariate-testing artifacts-order-review">
-        <div className="breakout">
-          <div className="breakout_images">
-            {images.orderReview.map(({ node }) => {
-              return (
-                <a
-                  href={node.childImageSharp.fluid.src}
-                  key={node.id}
-                  className="breakout_image"
-                >
-                  <figure>
-                    <Img fluid={node.childImageSharp.fluid} />
-                  </figure>
-                </a>
-              );
-            })}
-          </div>
-        </div>
-        <span className="caption">Control (L) and experiment (R).</span>
-      </aside>
+      <Artifacts
+        artifacts={images.orderReview}
+        caption={'Control (L) and experiment (R).'}
+        imageMinWidths={['140px', '240px']}
+        containerMaxWidths={['100%', '640px']}
+      />
 
       <h3>Results</h3>
       <p>
@@ -140,28 +123,14 @@ const AbSplitMultivariateTesting = () => {
         </li>
       </ul>
 
-      <aside className="artifacts artifacts-ab-multivariate-testing artifacts-pdp-multivariate">
-        <div className="breakout">
-          <div className="breakout_images">
-            {images.pdpMultivariate.map(({ node }) => {
-              return (
-                <a
-                  href={node.childImageSharp.fluid.src}
-                  key={node.id}
-                  className="breakout_image"
-                >
-                  <figure>
-                    <Img fluid={node.childImageSharp.fluid} />
-                  </figure>
-                </a>
-              );
-            })}
-          </div>
-        </div>
-        <span className="caption">
-          Control (L) and an example of a multivariate combination (R).
-        </span>
-      </aside>
+      <Artifacts
+        artifacts={images.pdpMultivariate}
+        caption={
+          'Control (L) and an example of a multivariate combination (R).'
+        }
+        imageMinWidths={['140px', '240px']}
+        containerMaxWidths={['100%', '640px']}
+      />
 
       <h3>Results</h3>
       <p>The most effective combination was one in which we:</p>
@@ -187,28 +156,11 @@ const AbSplitMultivariateTesting = () => {
         picked up their order in store instead of having it shipped.
       </p>
 
-      <aside className="artifacts artifacts-ab-multivariate-testing artifacts-spu-incentive">
-        <div className="breakout">
-          <div className="breakout_images">
-            {images.spuIncentive.map(({ node }) => {
-              return (
-                <a
-                  href={node.childImageSharp.fluid.src}
-                  key={node.id}
-                  className="breakout_image"
-                >
-                  <figure>
-                    <Img fluid={node.childImageSharp.fluid} />
-                  </figure>
-                </a>
-              );
-            })}
-          </div>
-        </div>
-        <span className="caption">
-          Banner placed at the top of Checkout (experiment).
-        </span>
-      </aside>
+      <Artifacts
+        artifacts={images.spuIncentive}
+        caption={'Banner placed at the top of Checkout (experiment).'}
+        imageWidths={['320px', '480px']}
+      />
 
       <h3>Results</h3>
       <p>

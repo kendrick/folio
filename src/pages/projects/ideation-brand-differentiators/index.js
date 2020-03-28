@@ -5,6 +5,7 @@ import Img from 'gatsby-image';
 import Layout from '../../../components/layout';
 import SEO from '../../../components/seo';
 
+import Artifacts from '../../../components/artifacts';
 import Overview from '../../../components/overview';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
@@ -86,28 +87,11 @@ const BrandDifferentiation = () => {
         brief session introducing each group to the method.
       </p>
 
-      <aside className="artifacts artifacts-ideation artifacts-intro">
-        <div className="breakout">
-          <div className="breakout_images">
-            {images.p1labsIntro.map(({ node }) => {
-              return (
-                <a
-                  href={node.childImageSharp.fluid.src}
-                  key={node.id}
-                  className="breakout_image"
-                >
-                  <figure>
-                    <Img fluid={node.childImageSharp.fluid} />
-                  </figure>
-                </a>
-              );
-            })}
-          </div>
-        </div>
-        <span className="caption">
-          Excerpts from our introduction to the method.
-        </span>
-      </aside>
+      <Artifacts
+        artifacts={images.p1labsIntro}
+        caption={'Excerpts from our introduction to the method.'}
+        imageMinWidths={['280px', '180px']}
+      />
 
       <p>
         It took some patience and calendar Tetris to reconvene the groups, but
@@ -115,28 +99,10 @@ const BrandDifferentiation = () => {
         followed a double-diamond, focus-and-flare approach.
       </p>
 
-      <aside className="artifacts artifacts-ideation artifacts-session">
-        <div className="breakout">
-          <div className="breakout_images">
-            {images.session.map(({ node }) => {
-              return (
-                <a
-                  href={node.childImageSharp.fluid.src}
-                  key={node.id}
-                  className="breakout_image"
-                >
-                  <figure>
-                    <Img fluid={node.childImageSharp.fluid} />
-                  </figure>
-                </a>
-              );
-            })}
-          </div>
-        </div>
-        <span className="caption">
-          Clustered Post-Its from two of the sessions.
-        </span>
-      </aside>
+      <Artifacts
+        artifacts={images.session}
+        caption={'Clustered Post-Its from two of the sessions.'}
+      />
 
       <p>
         The group constructed affinity diagrams that clustered ideas and plotted
@@ -150,28 +116,10 @@ const BrandDifferentiation = () => {
         perfect item.
       </p>
 
-      <aside className="artifacts artifacts-ideation artifacts-affinity-maps">
-        <div className="breakout">
-          <div className="breakout_images">
-            {images.affinityMaps.map(({ node }) => {
-              return (
-                <a
-                  href={node.childImageSharp.fluid.src}
-                  key={node.id}
-                  className="breakout_image"
-                >
-                  <figure>
-                    <Img fluid={node.childImageSharp.fluid} />
-                  </figure>
-                </a>
-              );
-            })}
-          </div>
-        </div>
-        <span className="caption">
-          Affinity maps created from the sessions' ideas.
-        </span>
-      </aside>
+      <Artifacts
+        artifacts={images.affinityMaps}
+        caption={"Affinity maps created from the sessions' ideas."}
+      />
 
       <p>
         If we knew specifics around a customer’s sense of style, we could offer
@@ -198,26 +146,11 @@ const BrandDifferentiation = () => {
         with our stakeholders.
       </p>
 
-      <aside className="artifacts artifacts-ideation artifacts-proto">
-        <div className="breakout">
-          <div className="breakout_images">
-            {images.proto.map(({ node }) => {
-              return (
-                <a
-                  href={node.childImageSharp.fluid.src}
-                  key={node.id}
-                  className="breakout_image"
-                >
-                  <figure>
-                    <Img fluid={node.childImageSharp.fluid} />
-                  </figure>
-                </a>
-              );
-            })}
-          </div>
-        </div>
-        <span className="caption">Selected screens from the prototype.</span>
-      </aside>
+      <Artifacts
+        artifacts={images.proto}
+        caption={'Selected screens from the prototype.'}
+        imageMinWidths={['120px', '120px']}
+      />
 
       <h2>Next Steps</h2>
       <p>

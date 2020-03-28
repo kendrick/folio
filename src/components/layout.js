@@ -34,6 +34,7 @@ const Layout = ({ children, headerStyle }) => {
       --header-lr-margin: 1rem;
       --padding-breakout: var(--header-lr-margin);
       --line-height: 1.66;
+      --default-spacing: calc(var(--line-height) * 1rem);
       --border-radius: 3px;
       --box-shadow: 0 2px 8px 0
         ${colors
@@ -141,6 +142,35 @@ const Layout = ({ children, headerStyle }) => {
           .alpha(0.1)
           .css()};
         box-shadow: var(--box-shadow-big);
+
+        &[data-rmiz-btn-open='true'] {
+          overflow: hidden;
+          background: transparent;
+
+          &::after {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(
+              135deg,
+              ${colors
+                .chroma('white')
+                .alpha(0.2)
+                .css()},
+              ${colors
+                .chroma(colors.gray.plus2)
+                .alpha(0.2)
+                .css()}
+            );
+            top: 0;
+            left: 0;
+          }
+        }
+
+        &[data-rmiz-btn-close='true'] {
+          background: transparent;
+        }
       }
 
       &:active {
@@ -162,7 +192,7 @@ const Layout = ({ children, headerStyle }) => {
       }
     }
 
-    .breakout {
+    /* .breakout {
       width: 100vw;
       position: relative;
       left: 50%;
@@ -193,7 +223,7 @@ const Layout = ({ children, headerStyle }) => {
           }
         }
       }
-    }
+    } */
   `;
 
   const Div = styled.div`

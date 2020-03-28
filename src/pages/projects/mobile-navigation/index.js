@@ -5,6 +5,7 @@ import Img from 'gatsby-image';
 import Layout from '../../../components/layout';
 import SEO from '../../../components/seo';
 import Overview from '../../../components/overview';
+import Artifacts from '../../../components/artifacts';
 import { css } from '@emotion/core';
 
 const MobileNavPage = ({ props }) => {
@@ -82,38 +83,12 @@ const MobileNavPage = ({ props }) => {
         own site to quantify where we were falling short.
       </p>
 
-      <aside className="artifacts artifacts-competitive-analysis">
-        <div
-          className="breakout breakout-narrow"
-          css={css`
-            justify-content: center;
-          `}
-        >
-          <div className="breakout_images">
-            {images.competitiveAnalysis.map(({ node }) => {
-              return (
-                <figure
-                  key={node.id}
-                  className="breakout_image breakout_image-space-md"
-                  css={css`
-                    flex: 0;
-                  `}
-                >
-                  <Img
-                    fluid={node.childImageSharp.fluid}
-                    css={css`
-                      max-width: 300px;
-                    `}
-                  />
-                </figure>
-              );
-            })}
-          </div>
-        </div>
-        <span className="caption">
-          Sample of sites used in competitive analysis.
-        </span>
-      </aside>
+      <Artifacts
+        artifacts={images.competitiveAnalysis}
+        caption={'Sample of sites used in competitive analysis.'}
+        imageMinWidths={['240px']}
+        containerMaxWidths={['100%', '640px']}
+      />
 
       <h3>Secondary Research</h3>
       <p>
@@ -146,26 +121,7 @@ const MobileNavPage = ({ props }) => {
         examples on Codepen to demonstrate desired animations & interactions.
       </p>
 
-      <aside className="artifacts artifacts-nav artifacts-ixd">
-        <div className="breakout breakout-narrow">
-          <div className="breakout_images">
-            {images.ixd.map(({ node }) => {
-              return (
-                <a
-                  href={node.childImageSharp.fluid.src}
-                  className="breakout_image"
-                  key={node.id}
-                >
-                  <figure>
-                    <Img fluid={node.childImageSharp.fluid} />
-                  </figure>
-                </a>
-              );
-            })}
-          </div>
-        </div>
-        <span className="caption">Detailed IxD notes.</span>
-      </aside>
+      <Artifacts artifacts={images.ixd} caption={'Detailed IxD notes.'} />
 
       <h3>Wireframes/Visual Design</h3>
       <p>
@@ -174,26 +130,10 @@ const MobileNavPage = ({ props }) => {
         these in Sketch with our pattern library.
       </p>
 
-      <aside className="artifacts artifacts-nav artifacts-visual-design">
-        <div className="breakout">
-          <div className="breakout_images">
-            {images.visualDesign.map(({ node }) => {
-              return (
-                <a
-                  href={node.childImageSharp.fluid.src}
-                  className="breakout_image"
-                  key={node.id}
-                >
-                  <figure>
-                    <Img fluid={node.childImageSharp.fluid} />
-                  </figure>
-                </a>
-              );
-            })}
-          </div>
-        </div>
-        <span className="caption">Sample of wireframes delivered to dev.</span>
-      </aside>
+      <Artifacts
+        artifacts={images.visualDesign}
+        caption={'Sample of wireframes delivered to dev.'}
+      />
 
       <h2>Next Steps</h2>
       <p>

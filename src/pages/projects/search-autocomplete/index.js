@@ -5,6 +5,7 @@ import Img from 'gatsby-image';
 import Layout from '../../../components/layout';
 import SEO from '../../../components/seo';
 import Overview from '../../../components/overview';
+import Artifacts from '../../../components/artifacts';
 
 import { css } from '@emotion/core';
 
@@ -94,18 +95,11 @@ const SearchAutocompletePage = () => {
         ultimately inform my design decisions.
       </p>
 
-      <aside className="artifacts">
-        <div className="images">
-          {images.research.map(({ node }) => {
-            return (
-              <figure key={node.id}>
-                <Img fluid={node.childImageSharp.fluid} />
-              </figure>
-            );
-          })}
-        </div>
-        <span className="caption">Analytics dashboard.</span>
-      </aside>
+      <Artifacts
+        artifacts={images.research}
+        caption={'Analytics dashboard.'}
+        imageMinWidths={['320px', '480px']}
+      />
 
       <h3>Heuristic Analysis</h3>
       <p>
@@ -127,23 +121,11 @@ const SearchAutocompletePage = () => {
         </li>
       </ul>
 
-      <aside className="artifacts artifacts-heuristic">
-        <div className="images">
-          {images.heuristic.map(({ node }) => {
-            return (
-              <figure key={node.id}>
-                <Img
-                  fluid={node.childImageSharp.fluid}
-                  css={css`
-                    width: ${375 / 1.25}px;
-                  `}
-                />
-              </figure>
-            );
-          })}
-        </div>
-        <span className="caption">Old design used in heuristic analysis.</span>
-      </aside>
+      <Artifacts
+        artifacts={images.heuristic}
+        caption={'Old design used in heuristic analysis.'}
+        imageMaxWidths={['240px']}
+      />
 
       <h3>Secondary Research</h3>
       <p>
@@ -165,26 +147,11 @@ const SearchAutocompletePage = () => {
         heights & widths that had previously not been accommodated.
       </p>
 
-      <aside className="artifacts artifacts-ixd">
-        <div className="breakout">
-          <div className="breakout_images">
-            {images.ixd.map(({ node }) => {
-              return (
-                <a
-                  href={node.childImageSharp.fluid.src}
-                  className="breakout_image"
-                  key={node.id}
-                >
-                  <figure>
-                    <Img fluid={node.childImageSharp.fluid} />
-                  </figure>
-                </a>
-              );
-            })}
-          </div>
-        </div>
-        <span className="caption">Sample of IxD notes.</span>
-      </aside>
+      <Artifacts
+        artifacts={images.ixd}
+        caption={'Sample of IxD notes.'}
+        imageMinWidths={['280px', '240px']}
+      />
 
       <h3>Wireframes</h3>
       <p>
@@ -192,26 +159,10 @@ const SearchAutocompletePage = () => {
         fidelity wireframes to present to the VP of E-Commerce and IT leaders.{' '}
       </p>
 
-      <aside className="artifacts artifacts-wireframes">
-        <div className="images breakout">
-          {images.wireframes.map(({ node }) => {
-            return (
-              <a
-                href={node.childImageSharp.fluid.src}
-                className="breakout_image"
-                key={node.id}
-              >
-                <figure>
-                  <Img fluid={node.childImageSharp.fluid} />
-                </figure>
-              </a>
-            );
-          })}
-        </div>
-        <span className="caption">
-          Sample mobile wireframe & desktop coverage visual.
-        </span>
-      </aside>
+      <Artifacts
+        artifacts={images.wireframes}
+        caption={'Sample mobile wireframe & desktop coverage visual.'}
+      />
 
       <h3>Visual Design</h3>
       <p>
@@ -220,26 +171,11 @@ const SearchAutocompletePage = () => {
         to the team for implementation.
       </p>
 
-      <aside className="artifacts artifacts-visual-design">
-        <div className="images breakout">
-          {images.visualDesign.map(({ node }) => {
-            return (
-              <a
-                href={node.childImageSharp.fluid.src}
-                className="breakout_image"
-                key={node.id}
-              >
-                <figure>
-                  <Img fluid={node.childImageSharp.fluid} />
-                </figure>
-              </a>
-            );
-          })}
-        </div>
-        <span className="caption">
-          Sample of visual design delivered to the team.
-        </span>
-      </aside>
+      <Artifacts
+        artifacts={images.visualDesign}
+        caption={'Sample of visual design delivered to the team.'}
+        imageMinWidths={['240px']}
+      />
 
       <h3>Next Steps</h3>
       <p>
