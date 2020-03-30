@@ -30,7 +30,7 @@ const Layout = ({ children, headerStyle }) => {
   const globalCss = css`
     :root {
       font-size: 18px;
-      --header-height: 47px;
+      --header-height: 64px;
       --header-lr-margin: 1rem;
       --padding-breakout: var(--header-lr-margin);
       --line-height: 1.66;

@@ -139,7 +139,7 @@ const Rocketbelt = () => {
       <div
         className="button"
         css={css`
-          margin-bottom: 2rem;
+          margin-bottom: 3rem;
         `}
       >
         <Link to="/projects">← Back to Projects</Link>

@@ -133,6 +133,7 @@ const MobileNavPage = ({ props }) => {
       <Artifacts
         artifacts={images.visualDesign}
         caption={'Sample of wireframes delivered to dev.'}
+        imageMinWidths={['120px', '240px']}
       />
 
       <h2>Next Steps</h2>
@@ -146,7 +147,7 @@ const MobileNavPage = ({ props }) => {
       <div
         className="button"
         css={css`
-          margin-bottom: 2rem;
+          margin-bottom: 3rem;
         `}
       >
         <Link to="/projects">← Back to Projects</Link>
