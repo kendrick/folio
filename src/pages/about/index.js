@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'gatsby';
-
+import { Location } from '@reach/router';
 import Layout from '../../components/layout';
 import Image from '../../components/image';
 import SEO from '../../components/seo';
@@ -94,98 +94,116 @@ const Card = styled.section`
   }
 `;
 
-const AboutPage = () => (
-  <Layout>
-    <SEO title="Kendrick Arnett › About" />
-    <h1>About Kendrick</h1>
-    <p>
-      I'm a developer-turned-UXer who's enthralled with bridging the gap with
-      colleagues in both professions.
-    </p>
-    <div
-      css={css`
-        display: flex;
+const AboutPage = () => {
+  const thanksContainer = useRef(null);
 
-        ${media[1]} {
-          justify-content: center;
-        }
-      `}
-    >
+  useEffect(() => {
+    if (
+      typeof window === 'object' &&
+      window.location.search.includes('submitted=true')
+    ) {
+      thanksContainer.current.innerText =
+        "Thank you! I'll be in touch as soon as possible.";
+    }
+  });
+
+  return (
+    <Layout>
+      <SEO title="Kendrick Arnett › About" />
+      <h1>About Kendrick</h1>
+      <p>
+        I'm a developer-turned-UXer who's enthralled with bridging the gap with
+        colleagues in both professions.
+      </p>
       <div
-        className="about_cards"
         css={css`
-          display: grid;
-          grid-template-rows: auto;
-          grid-gap: 1rem;
+          display: flex;
 
           ${media[1]} {
-            max-width: 640px;
-            grid-template-columns: 1fr 1fr;
+            justify-content: center;
           }
         `}
       >
-        <Card>
-          <h2 className="overview_subhead">I'm Borderline Obsessed With…</h2>
-          <div className="overview_text">
-            <ul>
-              <li>Black holes</li>
-              <li>
-                Public lands & the National Park system (America's Best Idea!)
-              </li>
-              <li>Coffee</li>
-              <li>BBQ</li>
-            </ul>
-          </div>
-        </Card>
+        <div
+          className="about_cards"
+          css={css`
+            display: grid;
+            grid-template-rows: auto;
+            grid-gap: 1rem;
 
-        <Card>
-          <h2 className="overview_subhead">I Have Strong Opinions About…</h2>
-          <div className="overview_text">
-            <ul>
-              <li>Participative leadership</li>
-              <li>Oxford commas</li>
-              <li>CSS-in-JS</li>
-            </ul>
-            <p>… but only because they're worth doing right.</p>
-          </div>
-        </Card>
+            ${media[1]} {
+              max-width: 640px;
+              grid-template-columns: 1fr 1fr;
+            }
+          `}
+        >
+          <Card>
+            <h2 className="overview_subhead">I'm Borderline Obsessed With…</h2>
+            <div className="overview_text">
+              <ul>
+                <li>Black holes</li>
+                <li>
+                  Public lands & the National Park system (America's Best Idea!)
+                </li>
+                <li>Coffee</li>
+                <li>BBQ</li>
+              </ul>
+            </div>
+          </Card>
+
+          <Card>
+            <h2 className="overview_subhead">I Have Strong Opinions About…</h2>
+            <div className="overview_text">
+              <ul>
+                <li>Participative leadership</li>
+                <li>Oxford commas</li>
+                <li>CSS-in-JS</li>
+              </ul>
+              <p>… but only because they're worth doing right.</p>
+            </div>
+          </Card>
+        </div>
       </div>
-    </div>
-    <h2>Contact Kendrick</h2>
-    <p>
-      I'd love to build something awesome with you! Send me a note below and
-      I'll get back to you.
-    </p>
+      <h2>Contact Kendrick</h2>
+      <p>
+        I'd love to build something awesome with you! Send me a note below and
+        I'll get back to you.
+      </p>
 
-    <FormWrapper>
-      <Form
-        name="contact"
-        method="POST"
-        netlify-honeypot="bot-field"
-        data-netlify="true"
-        action="/about?submitted=true"
-      >
-        <input type="hidden" name="bot-field" />
-        <input type="hidden" name="form-name" value="contact" />
-
-        <label className="contact_name">
-          Your Name
-          <input type="text" name="name" />
-        </label>
-
-        <label className="contact_email">
-          Your Email
-          <input type="email" name="email" />
-        </label>
-
-        <label className="contact_message">
-          Message<textarea name="message"></textarea>
-        </label>
-
-        <button type="submit">Send</button>
-      </Form>
-    </FormWrapper>
-  </Layout>
-);
+      <FormWrapper>
+        <Form
+          name="contact"
+          method="POST"
+          netlify-honeypot="bot-field"
+          data-netlify="true"
+          action="/about?submitted=true"
+        >
+          <input type="hidden" name="bot-field" />
+          <input type="hidden" name="form-name" value="contact" />
+          <label className="contact_name">
+            Your Name
+            <input type="text" name="name" />
+          </label>
+          <label className="contact_email">
+            Your Email
+            <input type="email" name="email" />
+          </label>
+          <label className="contact_message">
+            Message<textarea name="message"></textarea>
+          </label>
+          <button type="submit">Send</button>
+          <span
+            ref={thanksContainer}
+            css={css`
+              display: flex;
+              align-items: center;
+              margin-left: 1rem;
+            `}
+          ></span>
+        </Form>
+      </FormWrapper>
+    </Layout>
+  );
+};
 
 export default AboutPage;
