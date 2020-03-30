@@ -64,7 +64,6 @@ const Header = ({ siteTitle, headerStyle }) => (
         flex: 1;
         position: relative;
         align-items: center;
-        justify-content: space-between;
         z-index: 1;
       `}
     >
@@ -72,17 +71,44 @@ const Header = ({ siteTitle, headerStyle }) => (
         <Link
           to="/"
           css={css`
-            margin-left: var(--header-lr-margin);
+            /* margin-left: 1rem; */
             text-decoration: none;
             color: white;
           `}
         >
           <span
+            className="header_logo"
+            css={css`
+              margin-left: var(--header-lr-margin);
+              color: white;
+              font-size: 1.8rem;
+            `}
+          >
+            <svg
+              viewBox="0 0 126 171"
+              xmlns="http://www.w3.org/2000/svg"
+              css={css`
+                height: 1em;
+              `}
+            >
+              <path
+                d="M10.782 166.968L13.555 171H8l2.782-4.032zm56.106-81.306L125.555 171h-6.334L63.555 90.493l3.333-4.831zm-8.015 11.615L109.555 171h-6.334l-47.658-68.926 3.31-4.797zm-8.015 11.615L93.555 171h-6.334l-39.65-57.344 3.287-4.764zm-8.015 11.615L77.555 171h-6.334l-31.642-45.762 3.264-4.731zm-8.015 11.616L61.555 171h-6.334l-23.634-34.181 3.241-4.696zm-8.015 11.615L45.555 171h-6.334l-15.626-22.599 3.218-4.663zm-8.016 11.615L29.555 171h-6.334l-7.619-11.017 3.195-4.63zM117.555 0L0 171v-10.144L111.22 0h6.335zm-16 0L-.004 147.731 0 137.724 95.22 0h6.335zm-16 0L.004 124.446 0 114.612 79.22 0h6.335zm-16 0L0 101.196l-.003-9.757L63.22 0h6.335zm-16 0L-.002 77.906 0 68.318 47.22 0h6.335zm-16 0L0 54.612v-9.405L31.22 0h6.335zm-16 0L-.003 31.358 0 22.027 15.22 0h6.335zm-16 0L0 8.105V0h5.555z"
+                fill="currentColor"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+          <span
             css={css`
               text-transform: uppercase;
+              display: none;
+              visibility: hidden;
 
               ${media[1]} {
-                font-size: ${fontSize(1)};
+                margin-left: 0.5rem;
+                display: inline-block;
+                visibility: visible;
+                font-size: ${fontSize(0)};
               }
             `}
           >
@@ -114,6 +140,8 @@ const Header = ({ siteTitle, headerStyle }) => (
           margin-right: var(--header-lr-margin);
           padding: 0;
           display: flex;
+          justify-self: flex-end;
+          flex: 1;
           justify-content: flex-end;
           align-items: center;
 
