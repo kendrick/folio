@@ -67,7 +67,7 @@ const SearchAutocompletePage = () => {
           engagement with product & search suggestions within the search
           dropdown. Our hope was that we could surface just what the customer
           was looking for before they’d even finished typing her search term.`,
-          outcome: `The project saw a 9.9% lift in RPV for customers who interact with a
+          outcome: `The project saw a 9.9% lift in Revenue Per Visit for customers who interact with a
         search suggestion as well as a 27% lift in Conversion for customers
         who interact with a suggested product in the autocomplete container.`,
           role: `Lead UX Architect. I worked closely with our product owner and our
@@ -86,8 +86,8 @@ const SearchAutocompletePage = () => {
         I was surprised to find that customers were about 8% more likely to
         search on mobile than on desktop, though customers on desktop performed
         more searches per visit. Additionally, mobile customers who engaged the
-        search function had an RPV three times higher than that of customers who
-        didn’t search, and viewed 50% more product.
+        search function had an RPV (Revenue Per Visit) three times higher than
+        that of customers who didn’t search, and viewed 50% more product.
       </p>
       <p>
         I collaborated with our Internal Search Specialist to gather most

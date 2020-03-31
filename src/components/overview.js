@@ -55,17 +55,17 @@ const Overview = ({ children, overview }) => {
           </>
         )}
 
-        {overview.outcome && (
-          <>
-            <SubH className="overview_subhead">Outcome</SubH>
-            <p className="overview_text">{overview.outcome}</p>
-          </>
-        )}
-
         {overview.role && (
           <>
             <SubH className="overview_subhead">Role</SubH>
             <p className="overview_text">{overview.role}</p>
+          </>
+        )}
+
+        {overview.outcome && (
+          <>
+            <SubH className="overview_subhead">Outcome</SubH>
+            <p className="overview_text">{overview.outcome}</p>
           </>
         )}
       </div>
