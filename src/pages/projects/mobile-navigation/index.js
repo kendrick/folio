@@ -6,6 +6,7 @@ import Layout from '../../../components/layout';
 import SEO from '../../../components/seo';
 import Overview from '../../../components/overview';
 import Artifacts from '../../../components/artifacts';
+import BackToProjects from '../../../components/backToProjects';
 import { css } from '@emotion/core';
 
 const MobileNavPage = ({ props }) => {
@@ -144,14 +145,7 @@ const MobileNavPage = ({ props }) => {
         some of the rest of the design remains in the team’s backlog.
       </p>
 
-      <div
-        className="button"
-        css={css`
-          margin-bottom: 3rem;
-        `}
-      >
-        <Link to="/projects">← Back to Projects</Link>
-      </div>
+      <BackToProjects />
     </Layout>
   );
 };

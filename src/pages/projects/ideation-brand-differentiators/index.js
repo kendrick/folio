@@ -9,6 +9,7 @@ import Artifacts from '../../../components/artifacts';
 import Overview from '../../../components/overview';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
+import BackToProjects from '../../../components/backToProjects';
 
 const BrandDifferentiation = () => {
   const data = useStaticQuery(graphql`
@@ -159,14 +160,7 @@ const BrandDifferentiation = () => {
         down organizational silos and built long-standing bridges across teams.
       </p>
 
-      <div
-        className="button"
-        css={css`
-          margin-bottom: 3rem;
-        `}
-      >
-        <Link to="/projects">← Back to Projects</Link>
-      </div>
+      <BackToProjects />
     </Layout>
   );
 };

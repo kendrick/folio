@@ -6,6 +6,7 @@ import Artifacts from '../../../components/artifacts';
 import Layout from '../../../components/layout';
 import Image from '../../../components/image';
 import SEO from '../../../components/seo';
+import BackToProjects from '../../../components/backToProjects';
 
 import { css } from '@emotion/core';
 import Overview from '../../../components/overview';
@@ -136,14 +137,7 @@ const Rocketbelt = () => {
         redesign of the site that will remedy these issues.
       </p>
 
-      <div
-        className="button"
-        css={css`
-          margin-bottom: 3rem;
-        `}
-      >
-        <Link to="/projects">← Back to Projects</Link>
-      </div>
+      <BackToProjects />
     </Layout>
   );
 };

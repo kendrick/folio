@@ -6,6 +6,7 @@ import Layout from '../../../components/layout';
 import SEO from '../../../components/seo';
 import Overview from '../../../components/overview';
 import Artifacts from '../../../components/artifacts';
+import BackToProjects from '../../../components/backToProjects';
 
 import { css } from '@emotion/core';
 
@@ -191,14 +192,7 @@ const SearchAutocompletePage = () => {
         search results page needs to better align with the project.
       </p>
 
-      <div
-        className="button"
-        css={css`
-          margin-bottom: 3rem;
-        `}
-      >
-        <Link to="/projects">← Back to Projects</Link>
-      </div>
+      <BackToProjects />
     </Layout>
   );
 };

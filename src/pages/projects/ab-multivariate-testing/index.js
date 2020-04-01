@@ -4,7 +4,7 @@ import Img from 'gatsby-image';
 import Layout from '../../../components/layout';
 import Artifacts from '../../../components/artifacts';
 import SEO from '../../../components/seo';
-
+import BackToProjects from '../../../components/backToProjects';
 import { css } from '@emotion/core';
 
 const AbSplitMultivariateTesting = () => {
@@ -172,14 +172,7 @@ const AbSplitMultivariateTesting = () => {
         in Conversion led to the positive result.
       </p>
 
-      <div
-        className="button"
-        css={css`
-          margin-bottom: 3rem;
-        `}
-      >
-        <Link to="/projects">← Back to Projects</Link>
-      </div>
+      <BackToProjects />
     </Layout>
   );
 };
