@@ -104,6 +104,19 @@ const ProjectsIndexPage = () => {
       <h1>Selected Projects</h1>
 
       <ProjectsUl className="card-list list-horizontal">
+        <ProjectLi className="card">
+          <Link
+            to={`/projects/ideation-brand-differentiators`}
+            key="ideation-brand-differentiators"
+          >
+            <h2>Ideation on Brand Differentiators</h2>
+            <div className="card_rule"></div>
+            <small className="card_summary">
+              Cross-functional collaboration brings company expertise to
+              customers.
+            </small>
+          </Link>
+        </ProjectLi>
         <ProjectLi className="card card-search-autocomplete">
           <Link to={`/projects/search-autocomplete`} key="search-autocomplete">
             <h2>Search Autocomplete Experience</h2>
@@ -119,19 +132,6 @@ const ProjectsIndexPage = () => {
             <div className="card_rule"></div>
             <small className="card_summary">
               Eliminating dead ends and improving IxD.
-            </small>
-          </Link>
-        </ProjectLi>
-        <ProjectLi className="card">
-          <Link
-            to={`/projects/ideation-brand-differentiators`}
-            key="ideation-brand-differentiators"
-          >
-            <h2>Ideation on Brand Differentiators</h2>
-            <div className="card_rule"></div>
-            <small className="card_summary">
-              Cross-functional collaboration brings company expertise to
-              customers.
             </small>
           </Link>
         </ProjectLi>
