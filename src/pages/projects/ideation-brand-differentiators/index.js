@@ -51,6 +51,9 @@ const BrandDifferentiation = () => {
     p1labsIntro: data.allFile.edges.filter(({ node }) => {
       return node.base.includes('p1labs-intro');
     }),
+    userFlow: data.allFile.edges.filter(({ node }) => {
+      return node.base.includes('user-flow');
+    }),
     proto: data.allFile.edges.filter(({ node }) => {
       return node.base.includes('prototype-');
     }),
@@ -96,8 +99,9 @@ const BrandDifferentiation = () => {
 
       <p>
         It took some patience and calendar Tetris to reconvene the groups, but
-        we met for 120-minute sessions. The general structure of the sessions
-        followed a double-diamond, focus-and-flare approach.
+        we met for several 120-minute sessions. The sessions were loosely
+        structured around the individual days of a Design Sprint and followed a
+        double-diamond, focus-and-flare approach.
       </p>
 
       <Artifacts
@@ -106,9 +110,10 @@ const BrandDifferentiation = () => {
       />
 
       <p>
-        The group constructed affinity diagrams that clustered ideas and plotted
-        them on impact & effort axes. I made digital versions of these maps that
-        would be used later.
+        The group voted on 2 “How Might We?” questions to explore answers to. We
+        constructed affinity diagrams that clustered ideas and plotted them on
+        impact & effort axes. I made digital versions of these maps that would
+        be used later.
       </p>
 
       <p>
@@ -130,16 +135,33 @@ const BrandDifferentiation = () => {
       </p>
 
       <p>
-        Based on these observations, the group decided to solve several of these
-        customer needs at once with a mobile app.
+        Based on these observations, the group voted on potential solutions and
+        decided to solve several of these customer needs at once with a mobile
+        app. This idea was enthusiastically approved by our executive
+        stakeholder.
       </p>
 
       <h2>Design</h2>
       <p>
-        We were given a very short timeframe, and the executive sponsor of this
-        project had specifically asked to see our output at a higher fidelity
-        than wireframes.
+        We were given a very short timeframe, and the sponsor of this project
+        had specifically asked to see our output at a higher fidelity than
+        wireframes.
       </p>
+
+      <h3>User Flow</h3>
+      <p>
+        To be sure the group was aligned, I constructed a high-level user flow
+        diagram of the idea. This diagram would allow us to double-check the
+        feasibility of our idea with partners in IT and Marketing.
+      </p>
+
+      <Artifacts
+        artifacts={images.userFlow}
+        caption={
+          'User flow diagram used for alignment & feasibility validation.'
+        }
+        imageMinWidths={['120px', '120px']}
+      />
 
       <p>
         I built medium-fidelity mockups to represent the proposed direction of
