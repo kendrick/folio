@@ -40,6 +40,9 @@ const MobileNavPage = ({ props }) => {
     competitiveAnalysis: data.allFile.edges.filter(({ node }) => {
       return node.base.includes('ca-');
     }),
+    iteration: data.allFile.edges.filter(({ node }) => {
+      return node.base.includes('iteration-');
+    }),
     ixd: data.allFile.edges.filter(({ node }) => {
       return node.base.includes('ixd-');
     }),
@@ -127,13 +130,48 @@ const MobileNavPage = ({ props }) => {
       <h3>Wireframes/Visual Design</h3>
       <p>
         Because of the lower impact on visual design, the team agreed that they
-        could build the experience based on medium-fidelity wireframes. I built
-        these in Sketch with our pattern library.
+        could build the experience with a medium-fidelity wireframes and close
+        coordination between our teams. I built the wireframes in Sketch with
+        our pattern library and partnered with the dev team daily to ensure what
+        was delivered aligned with the initial vision.
       </p>
 
       <Artifacts
         artifacts={images.visualDesign}
+        filter={'lo'}
         caption={'Sample of wireframes delivered to dev.'}
+        imageMinWidths={['120px', '240px']}
+      />
+
+      <h3>Delivery and Iteration</h3>
+
+      <p>
+        Our marketing team was executing a brand refresh in parallel with this
+        project, so the delivered feature differs just slightly from the initial
+        design.
+      </p>
+
+      <Artifacts
+        artifacts={images.visualDesign}
+        filter={'hi'}
+        imageMaxWidths={['240px', '240px']}
+        caption={'Sample of launched designs.'}
+        imageMinWidths={['120px', '240px']}
+      />
+
+      <p>
+        Our initial business goal was to help customers make better sense of our
+        site's product taxonomy. A secondary goal was making it easier and more
+        intuitive for customers to contact Customer Relations. To ensure that we
+        met these goals, I designed variations to be A/B tested.
+      </p>
+
+      <Artifacts
+        artifacts={images.iteration}
+        imageMaxWidths={['240px', '240px']}
+        caption={
+          'Sample of variations to test & iterate. Collapsing less-trafficked categories (L) and bolder "Help" Calls to Action (R).'
+        }
         imageMinWidths={['120px', '240px']}
       />
 
