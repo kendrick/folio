@@ -39,7 +39,7 @@ const AbSplitMultivariateTesting = () => {
       return node.base.includes('order-review-');
     }),
     pdpMultivariate: data.allFile.edges.filter(({ node }) => {
-      return node.base.includes('pdp-multivariate-');
+      return node.base.includes('mobile-pdp-');
     }),
     spuIncentive: data.allFile.edges.filter(({ node }) => {
       return node.base.includes('spu-incentive-');
@@ -61,30 +61,6 @@ const AbSplitMultivariateTesting = () => {
         with an A/B and Multivariate testing program that I developed and have
         managed since 2016. Here are some of my favorite results in that time
         period.
-      </p>
-
-      <h2>Order Review Progress Indicator</h2>
-      <h3>Summary</h3>
-      <p>
-        We suspected we could improve the clarity of whether an order had been
-        submitted by adding an additional point to the progress indicator in our
-        Checkout experience.
-      </p>
-
-      <Artifacts
-        artifacts={images.orderReview}
-        caption={'Control (L) and experiment (R).'}
-        imageMinWidths={['140px', '240px']}
-        containerMaxWidths={['100%', '640px']}
-      />
-
-      <h3>Results</h3>
-      <p>
-        The experiment resulted in a minor lift in Conversion Rate (0.58% on
-        mobile devices; 0.18% on desktop). These findings indicated that there
-        were customers who intended to purchase, but may have accidentally
-        abandoned their carts on the Order Review page. These "saved" orders
-        accounted for an additional $750,000 in annualized revenue.
       </p>
 
       <h2>Product Page Multivariate</h2>
@@ -146,6 +122,30 @@ const AbSplitMultivariateTesting = () => {
         lift in Add to Basket Rate on our product pages!
       </p>
 
+      <h2>Order Review Progress Indicator</h2>
+      <h3>Summary</h3>
+      <p>
+        We suspected we could improve the clarity of whether an order had been
+        submitted by adding an additional point to the progress indicator in our
+        Checkout experience.
+      </p>
+
+      <Artifacts
+        artifacts={images.orderReview}
+        caption={'Control (L) and experiment (R).'}
+        imageMinWidths={['140px', '240px']}
+        containerMaxWidths={['100%', '640px']}
+      />
+
+      <h3>Results</h3>
+      <p>
+        The experiment resulted in a minor lift in Conversion Rate (0.58% on
+        mobile devices; 0.18% on desktop). These findings indicated that there
+        were customers who intended to purchase, but may have accidentally
+        abandoned their carts on the Order Review page. These "saved" orders
+        accounted for an additional $750,000 in annualized revenue.
+      </p>
+
       <h2>Store Pick-Up Incentive</h2>
       <h3>Summary</h3>
       <p>
@@ -159,7 +159,8 @@ const AbSplitMultivariateTesting = () => {
       <Artifacts
         artifacts={images.spuIncentive}
         caption={'Banner placed at the top of Checkout (experiment).'}
-        imageWidths={['320px', '480px']}
+        imageMinWidths={['120px', '240px']}
+        imageMaxWidths={['240px', '480px']}
       />
 
       <h3>Results</h3>
