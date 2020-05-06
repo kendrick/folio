@@ -174,7 +174,15 @@ const SearchAutocompletePage = () => {
 
       <Artifacts
         artifacts={images.visualDesign}
-        caption={'Sample of visual design delivered to the team.'}
+        filter={'mobile'}
+        caption={'Sample of mobile designs delivered to the team.'}
+        imageMinWidths={['240px']}
+      />
+
+      <Artifacts
+        artifacts={images.visualDesign}
+        filter={'desktop'}
+        caption={'Sample of desktop designs delivered to the team.'}
         imageMinWidths={['240px']}
       />
 

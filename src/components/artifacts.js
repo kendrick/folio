@@ -8,6 +8,7 @@ import { media } from '../utils/rocketbelt';
 const Artifacts = ({
   artifacts,
   caption,
+  filter,
   imageMinWidths,
   imageMaxWidths,
   containerMaxWidths,
@@ -17,6 +18,12 @@ const Artifacts = ({
   imageMinWidths = imageMinWidths || ['280px'];
   imageMaxWidths = imageMaxWidths || ['1fr'];
   containerMaxWidths = containerMaxWidths || ['100%'];
+
+  if (filter) {
+    artifacts = artifacts.filter(({ node }) => {
+      return node.base.includes(filter);
+    });
+  }
 
   return (
     <aside
@@ -46,6 +53,10 @@ const Artifacts = ({
               auto-fit,
               minmax(var(--min), var(--max))
             );
+
+            button {
+              box-shadow: none;
+            }
           `,
           imageMinWidths[1] &&
             css`
@@ -54,29 +65,17 @@ const Artifacts = ({
               }
             `,
         ]}
-
-        // width: 100vw;
-        // position: relative;
-        // left: 50%;
-        // transform: translateX(-50%);
       >
         {artifacts.map(({ node }) => {
           return (
             (!noZoom && (
               <Zoom key={node.id}>
-                <a
-                  href={node.childImageSharp.fluid.src}
+                <Img
+                  fluid={node.childImageSharp.fluid}
                   css={css`
                     width: 100%;
                   `}
-                >
-                  <Img
-                    fluid={node.childImageSharp.fluid}
-                    css={css`
-                      width: 100%;
-                    `}
-                  />
-                </a>
+                />
               </Zoom>
             )) || (
               <Img
