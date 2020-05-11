@@ -3,7 +3,6 @@ import { Link, useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 import Artifacts from '../../../components/artifacts';
-import Layout from '../../../components/layout';
 import Image from '../../../components/image';
 import SEO from '../../../components/seo';
 import BackToProjects from '../../../components/backToProjects';
@@ -11,7 +10,7 @@ import BackToProjects from '../../../components/backToProjects';
 import { css } from '@emotion/core';
 import Overview from '../../../components/overview';
 
-const Rocketbelt = () => {
+const Rocketbelt = ({ children, transitionStatus, entry, exit }) => {
   const data = useStaticQuery(graphql`
     query {
       allFile(
@@ -49,7 +48,7 @@ const Rocketbelt = () => {
     }),
   };
   return (
-    <Layout>
+    <div className={transitionStatus}>
       <SEO title="Kendrick Arnett › Projects › Rocketbelt Pattern Library" />
       <h1>Rocketbelt Pattern Library</h1>
 
@@ -138,7 +137,7 @@ const Rocketbelt = () => {
       </p>
 
       <BackToProjects />
-    </Layout>
+    </div>
   );
 };
 

@@ -26,6 +26,7 @@ const Overview = ({ children, overview }) => {
 
         .overview_subhead {
           font-size: ${fontSize(-1)};
+          font-style: italic;
           margin: 0;
         }
 

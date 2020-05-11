@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
-import Layout from '../../../components/layout';
 import SEO from '../../../components/seo';
 import Overview from '../../../components/overview';
 import Artifacts from '../../../components/artifacts';
@@ -10,7 +9,12 @@ import BackToProjects from '../../../components/backToProjects';
 
 import { css } from '@emotion/core';
 
-const SearchAutocompletePage = () => {
+const SearchAutocompletePage = ({
+  children,
+  transitionStatus,
+  entry,
+  exit,
+}) => {
   const data = useStaticQuery(graphql`
     query {
       allFile(
@@ -56,7 +60,7 @@ const SearchAutocompletePage = () => {
   };
 
   return (
-    <Layout>
+    <div className={transitionStatus}>
       <SEO title="Kendrick Arnett › Projects › Search Autocomplete" />
       <h1>Search Autocomplete Experience</h1>
       <Overview
@@ -201,7 +205,7 @@ const SearchAutocompletePage = () => {
       </p>
 
       <BackToProjects />
-    </Layout>
+    </div>
   );
 };
 

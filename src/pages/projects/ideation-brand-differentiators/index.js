@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
-import Layout from '../../../components/layout';
 import SEO from '../../../components/seo';
 
 import Artifacts from '../../../components/artifacts';
@@ -11,7 +10,7 @@ import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 import BackToProjects from '../../../components/backToProjects';
 
-const BrandDifferentiation = () => {
+const BrandDifferentiation = ({ children, transitionStatus, entry, exit }) => {
   const data = useStaticQuery(graphql`
     query {
       allFile(
@@ -63,7 +62,7 @@ const BrandDifferentiation = () => {
   };
 
   return (
-    <Layout>
+    <div className={transitionStatus}>
       <SEO title="Kendrick Arnett › Projects › Ideation" />
       <h1>Ideation on Brand Differentiators</h1>
       <Overview
@@ -183,7 +182,7 @@ const BrandDifferentiation = () => {
       </p>
 
       <BackToProjects />
-    </Layout>
+    </div>
   );
 };
 

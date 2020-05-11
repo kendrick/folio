@@ -1,13 +1,15 @@
 import React from 'react';
-import { Link, useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
-import Layout from '../../../components/layout';
+import { useStaticQuery, graphql } from 'gatsby';
 import Artifacts from '../../../components/artifacts';
 import SEO from '../../../components/seo';
 import BackToProjects from '../../../components/backToProjects';
-import { css } from '@emotion/core';
 
-const AbSplitMultivariateTesting = () => {
+const AbSplitMultivariateTesting = ({
+  children,
+  transitionStatus,
+  entry,
+  exit,
+}) => {
   const data = useStaticQuery(graphql`
     query {
       allFile(
@@ -47,7 +49,7 @@ const AbSplitMultivariateTesting = () => {
   };
 
   return (
-    <Layout>
+    <div className={transitionStatus}>
       <SEO title="Kendrick Arnett › Projects › A/B & Multivariate Testing" />
       <h1>A/B and Multivariate Testing</h1>
       <p>
@@ -174,7 +176,7 @@ const AbSplitMultivariateTesting = () => {
       </p>
 
       <BackToProjects />
-    </Layout>
+    </div>
   );
 };
 

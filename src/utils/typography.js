@@ -9,7 +9,7 @@ const typography = new Typography({
       styles: ['300', '400', '400i', '600', '600i'],
     },
   ],
-  headerWeight: 600,
+  headerWeight: 500,
   boldWeight: 500,
   headerFontFamily: [
     'Work Sans',

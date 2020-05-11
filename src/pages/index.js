@@ -1,15 +1,14 @@
 import React from 'react';
-import { Link } from 'gatsby';
-
-import Layout from '../components/layout';
-import Image from '../components/image';
 import SEO from '../components/seo';
 
 import { css } from '@emotion/core';
 import { media } from '../utils/rocketbelt';
+import gsap from 'gsap';
+
+import TransitionLink from 'gatsby-plugin-transition-link';
 
 const IndexPage = () => (
-  <Layout>
+  <>
     <SEO title="Kendrick Arnett › UX Leader" />
     <div
       className="content"
@@ -35,21 +34,13 @@ const IndexPage = () => (
     >
       <h1>Hi, I'm Kendrick Arnett</h1>
 
-      {/* <Link
-        to="./modal-example"
-        state={{
-          modal: true,
-        }}
-      >
-        Modal Example
-      </Link> */}
       <p>A Lead UX Architect in Fort Worth, TX.</p>
       <p>
         I'm passionate about uncovering the little points of friction that cause
         customers pain and designing thoughtful solutions to remedy them.
       </p>
     </div>
-  </Layout>
+  </>
 );
 
 export default IndexPage;

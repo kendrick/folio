@@ -1,13 +1,14 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
-import Layout from '../../components/layout';
 import Image from '../../components/image';
 import SEO from '../../components/seo';
 import Img from 'gatsby-image';
+import { Link } from 'gatsby';
 
 import { css } from '@emotion/core';
 import styled from '@emotion/styled';
+
+import Tlink from '../../components/t-link';
 
 import { colors, fontSize } from '../../utils/rocketbelt';
 
@@ -16,6 +17,7 @@ const ProjectsUl = styled.ul`
   padding: 0;
   margin: 0;
   display: grid;
+  margin-bottom: 1rem;
   grid-gap: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 `;
@@ -97,15 +99,15 @@ const ProjectLi = styled.li`
   }
 `;
 
-const ProjectsIndexPage = () => {
+const ProjectsIndexPage = ({ children, transitionStatus, entry, exit }) => {
   return (
-    <Layout>
+    <div className={transitionStatus}>
       <SEO title="Kendrick Arnett › Projects" />
       <h1>Selected Projects</h1>
 
       <ProjectsUl className="card-list list-horizontal">
         <ProjectLi className="card">
-          <Link
+          <Tlink
             to={`/projects/ideation-brand-differentiators`}
             key="ideation-brand-differentiators"
           >
@@ -115,28 +117,28 @@ const ProjectsIndexPage = () => {
               Cross-functional collaboration brings company expertise to
               customers.
             </small>
-          </Link>
+          </Tlink>
         </ProjectLi>
         <ProjectLi className="card card-search-autocomplete">
-          <Link to={`/projects/search-autocomplete`} key="search-autocomplete">
+          <Tlink to={`/projects/search-autocomplete`} key="search-autocomplete">
             <h2>Search Autocomplete Experience</h2>
             <div className="card_rule"></div>
             <small className="card_summary">
               Helping customers find the right item faster.
             </small>
-          </Link>
+          </Tlink>
         </ProjectLi>
         <ProjectLi className="card">
-          <Link to={`/projects/mobile-navigation`} key="mobile-navigation">
+          <Tlink to={`/projects/mobile-navigation`} key="mobile-navigation">
             <h2>Mobile Navigation Redesign</h2>
             <div className="card_rule"></div>
             <small className="card_summary">
               Eliminating dead ends and improving IxD.
             </small>
-          </Link>
+          </Tlink>
         </ProjectLi>
         <ProjectLi className="card">
-          <Link
+          <Tlink
             to={`/projects/rocketbelt-pattern-library`}
             key="rocketbelt-pattern-library"
           >
@@ -145,10 +147,10 @@ const ProjectsIndexPage = () => {
             <small className="card_summary">
               Building bridges & fostering consistency for designers & devs.
             </small>
-          </Link>
+          </Tlink>
         </ProjectLi>
         <ProjectLi className="card">
-          <Link
+          <Tlink
             to={`/projects/ab-multivariate-testing`}
             key="ab-multivariate-testing"
           >
@@ -157,7 +159,7 @@ const ProjectsIndexPage = () => {
             <small className="card_summary">
               Quantitatively measuring the experience.
             </small>
-          </Link>
+          </Tlink>
         </ProjectLi>
       </ProjectsUl>
 
@@ -168,7 +170,7 @@ const ProjectsIndexPage = () => {
       <li>Checkout & Order Summary Refresh</li>
       <li>Promo Experience on PLPs & PDPs</li>
     </ul> */}
-    </Layout>
+    </div>
   );
 };
 

@@ -2,14 +2,13 @@ import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
-import Layout from '../../../components/layout';
 import SEO from '../../../components/seo';
 import Overview from '../../../components/overview';
 import Artifacts from '../../../components/artifacts';
 import BackToProjects from '../../../components/backToProjects';
 import { css } from '@emotion/core';
 
-const MobileNavPage = ({ props }) => {
+const MobileNavPage = ({ children, transitionStatus, entry, exit }) => {
   const data = useStaticQuery(graphql`
     query {
       allFile(
@@ -55,7 +54,7 @@ const MobileNavPage = ({ props }) => {
   };
 
   return (
-    <Layout>
+    <div className={transitionStatus}>
       <SEO title="Kendrick Arnett › Projects › Mobile Navigation Redesign" />
       <h1>Mobile Navigation Redesign</h1>
 
@@ -184,7 +183,7 @@ const MobileNavPage = ({ props }) => {
       </p>
 
       <BackToProjects />
-    </Layout>
+    </div>
   );
 };
 

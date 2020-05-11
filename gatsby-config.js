@@ -15,6 +15,12 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-transition-link`,
+      options: {
+        layout: require.resolve(`./src/components/layout.js`),
+      },
+    },
     `gatsby-plugin-modal-routing`,
     {
       resolve: `gatsby-plugin-emotion`,
@@ -32,13 +38,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `kendrick.cc`,
+        short_name: `kendrick.cc`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#4911ae`,
+        theme_color: `#4911ae`,
         display: `minimal-ui`,
-        // icon: `src/artifacts/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/artifacts/kendrick-cc-icon.png`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

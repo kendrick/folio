@@ -78,14 +78,15 @@ const Layout = ({ children, headerStyle }) => {
     }
 
     p {
-      margin-bottom: calc(var(--line-height) * 1rem);
+      margin-bottom: calc(var(--line-height) * 1.5rem);
     }
 
     h1 {
-      font-size: ${fontSize(3)};
+      font-size: ${fontSize(4)};
+      font-weight: 300;
 
       ${media[1]} {
-        font-size: ${fontSize(4)};
+        font-size: ${fontSize(6)};
       }
     }
 
@@ -224,6 +225,31 @@ const Layout = ({ children, headerStyle }) => {
         }
       }
     } */
+
+    .entering {
+      opacity: 0;
+      transform: translateY(5vh);
+      transition: transform 0.6s cubic-bezier(0.39, 0.575, 0.565, 1),
+        opacity 0.8s linear;
+    }
+
+    .entered {
+      transform: none;
+      opacity: 1;
+      transition: transform 0.6s cubic-bezier(0.39, 0.575, 0.565, 1),
+        opacity 0.8s linear;
+    }
+
+    .exiting {
+      opacity: 0;
+      transform: translateY(-5vh);
+      transition: transform 0.6s cubic-bezier(0.39, 0.575, 0.565, 1),
+        opacity 0.8s linear;
+    }
+
+    .exited {
+      background: red !important;
+    }
   `;
 
   const Div = styled.div`

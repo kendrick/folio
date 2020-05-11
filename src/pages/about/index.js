@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'gatsby';
 import { Location } from '@reach/router';
-import Layout from '../../components/layout';
 import Image from '../../components/image';
 import SEO from '../../components/seo';
 import styled from '@emotion/styled';
@@ -108,7 +107,7 @@ const AboutPage = () => {
   });
 
   return (
-    <Layout>
+    <>
       <SEO title="Kendrick Arnett › About" />
       <h1>About Kendrick</h1>
       <p>
@@ -202,7 +201,7 @@ const AboutPage = () => {
           ></span>
         </Form>
       </FormWrapper>
-    </Layout>
+    </>
   );
 };
 

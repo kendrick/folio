@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from '@emotion/core';
-import { Link } from 'gatsby';
+import TransitionLink from 'gatsby-plugin-transition-link';
 
 const BackToProjects = ({ children, overview }) => {
   return (
@@ -11,7 +11,7 @@ const BackToProjects = ({ children, overview }) => {
         padding: 0;
       `}
     >
-      <Link
+      <TransitionLink
         to="/projects"
         css={css`
           padding: 0.5em 1em;
@@ -19,7 +19,7 @@ const BackToProjects = ({ children, overview }) => {
         `}
       >
         ← Back to Projects
-      </Link>
+      </TransitionLink>
     </div>
   );
 };
