@@ -45,6 +45,9 @@ const SearchAutocompletePage = ({
     heuristic: data.allFile.edges.filter(({ node }) => {
       return node.base.includes('heuristic-');
     }),
+    sketches: data.allFile.edges.filter(({ node }) => {
+      return node.base.includes('sketch-');
+    }),
     ixd: data.allFile.edges.filter(({ node }) => {
       return node.base.includes('ixd-');
     }),
@@ -140,9 +143,23 @@ const SearchAutocompletePage = ({
       </p>
 
       <h2>Design</h2>
+      <h3>Sketches</h3>
+      <p>
+        I sketched out my initial ideas to communicate the general direction I
+        had in mind. I used them in conversations with my manager, my fellow UX
+        designer, our product owner, and stakeholders including the VP of
+        E-Commerce and our internal search specialist.
+      </p>
+
+      <Artifacts
+        artifacts={images.sketches}
+        caption={'Sample of sketches.'}
+        imageMinWidths={['280px', '240px']}
+      />
+
       <h3>Interaction Design</h3>
       <p>
-        Based on this research, I knew it was important to introduce some new
+        Based on our research, I knew it was important to introduce some new
         interactions to the site. We would enable customers to narrow the scope
         of their search by allowing autocomplete results to search within a
         category. We would also offer autocompleted category names as search
